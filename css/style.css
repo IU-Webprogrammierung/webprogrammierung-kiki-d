@@ -1,0 +1,87 @@
+/* 
+================================
+Design Plan - Website CSS
+================================
+-> Strukturierung der CSS-Datei in Module in menschenlesbare Abschnitte
+
+01 Reset
+02 Base (Grundfarben, Schriftarten)
+03 Layout (Container, Grids, Header, Footer)
+04 Typografie (Überschriften, Absätze, Listen)
+05 Navigation (Menüs, Sidebar)
+06 Formulare (Inputs, Buttons)
+07 Komponenten (Cards, Boxen, Slider)
+08 Medien (Bilder, Videos, Galerien)
+09 Utilities (Hilfsklassen)
+10 Responsive (Media Queries)
+
+--- 01 Reset ---
+
+
+--- 02 Base ---
+
+- Color Palette:
+  - Primary Color: #3498db (Blue)
+  - Secondary Color: #2ecc71 (Green)
+  - Accent Color: #e74c3c (Red)
+  - Background Color: #f5f5f5 (Light Grey)
+  - Text Color: #333333 (Dark Grey)
+  - Light Text Color: #777777 (Medium Grey)
+  - Border Color: #dddddd (Light Grey)
+
+- Google Fonts: 
+  - Font 1: 'Roboto', sans-serif; (Body text)
+  - Font 2: 'Merriweather', serif; (Headings)
+
+
+--- 03 Typography ---
+
+
+- Font sizes (px):
+  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights:
+  - Body text: 400 (Regular)
+  - Headings: 700 (Bold)
+
+- Line height:
+  - Body text: 1.6
+  - Headings: 1.2
+
+
+--- 05 Navigation ---
+
+- Menu Styles:
+  - Background Color: #ffffff (White)
+  - Text Color: #333333 (Dark Grey)
+  - Hover Color: #3498db (Blue)
+
+- Sidebar Styles:
+  - Background Color: #f5f5f5 (Light Grey)
+  - Text Color: #333333 (Dark Grey)
+
+
+--- 06 Formulare ---
+
+--- 08 Medien ---
+
+--- 09 Utilities ---
+
+--- 10 Responsive ---
+
+*/
+
+
+/* =========================
+   GOOGLE FONTS IMPORT
+========================= */
+
+@import url();
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+}
