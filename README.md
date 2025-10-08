@@ -36,8 +36,8 @@ WEBPROGRAMMIERUNG-KIKI-D/
 ├── index.html               → Landing page
 ├── ubermich.html            → persönliche Angaben
 ├── projekte.html            → abgeschlossene Projekte
-├── philosophie.html         → Alleinstellungsmerkmal der Arbeitsweise
-├── kontakt.html             → Möglichkeit zur Kontaktaufnahmen
+├── philosophie.html         → Meine Fähigkeiten und Werte
+├── contact.html             → Möglichkeit zur Kontaktaufnahmen
 ├── 404.html                 → Custom error page
 ├── css/
 │   ├── style.css
