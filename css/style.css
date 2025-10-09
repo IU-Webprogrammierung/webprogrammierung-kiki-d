@@ -143,6 +143,12 @@ html {
     font-size: var(--schriftgröße-mittel);
     width: 100%;
   }
+  .navigation-list-header {
+    flex-direction: row; 
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+  }
 }
 
 /* Ab 1280px – Großer Desktop */
