@@ -84,13 +84,13 @@ Design Plan - Website CSS
 
 :root {
   --hauptfarbe: #3498db; /* Blau */
-  --sekundaerfarbe: #2ecc71; /* Grün */
+  --sekundaerfarbe: #cfcfcf; /* Grau */
   --akzentfarbe: #e74c3c; /* Rot */
   --hintergrundfarbe: #ffffff; /* Weiß */
   --textfarbe: #000000; /* Schwarz */
-  --schriftgröße-klein: 14px;
-  --schriftgröße-mittel: 16px;
-  --schriftgröße-groß: 20px;
+  --schriftgröße-klein: 1rem;
+  --schriftgröße-mittel: 1.115rem;
+  --schriftgröße-groß: 1.25rem;
   --schriftart-körper: 'Open Sans', sans-serif;
 
 }
@@ -105,29 +105,89 @@ body {
   padding: 0;
 }
 
+header {
+  background-color: var(--sekundaerfarbe);
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+
+}
+
 /* =========================
    10 Media Queries
 ========================= */
 
 
 /* Standard: Mobile */
-.projekte ul {
+html {
   display: flex;
   flex-direction: column; /* Projekte untereinander */
   gap: 1rem;
+  font-size: var(--schriftgröße-klein);
 }
 
 /* Ab 760px – Tablet oder Desktop */
 @media (min-width: 760px) {
-  .projects ul {
+  html {
     flex-direction: row; /* Projekte nebeneinander */
+    font-size: var(--schriftgröße-mittel);
   }
 }
 
 /* Ab 1280px – Großer Desktop */
 @media (min-width: 1280px) {
-  #wrapper {
+ 
+ 
+  html {
+    gap: 2rem;
+    font-size: var(--schriftgröße-groß);
     width: 100%;
   }
- 
+}
+
+/* =========================
+   04 Typografie
+========================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--schriftart-kopfzeile);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  font-family: var(--schriftart-körper);
+  font-weight: 400;
+  line-height: 1.6;
+}
+a {
+  color: var(--hauptfarbe);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*==========================
+   05 Navigation
+========================== */
+
+.navigation-list-header {
+    list-style: none;          /* Entfernt die Punkte */
+    display: flex;
+    justify-content: flex-end;  /* Zentriert die Listenelemente rechts */
+    gap: 20px;                 /* Abstand zwischen den Listenelementen */
+}
+
+.navigation-list-element a {
+    text-decoration: none;      /* Entfernt Unterstreichung */
+    color: var(--textfarbe);    /* Textfarbe aus Root-Variable */
+    font-family: var(--schriftart-körper);
+    font-size: var(--schriftgröße-mittel);
+    padding: 5px 10px;          /* Klickbarer Bereich vergrößern */
+    transition: color 0.3s;
+}
+
+.navigation-list-element a:hover {
+    color: var(--hauptfarbe);   /* Hover-Effekt */
 }
