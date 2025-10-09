@@ -76,12 +76,58 @@ Design Plan - Website CSS
    GOOGLE FONTS IMPORT
 ========================= */
 
-@import url();
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=PT+Serif:wght@400;700&display=swap');
 
 /* =========================
    ROOT VARIABLES
 ========================= */
 
 :root {
+  --hauptfarbe: #3498db; /* Blau */
+  --sekundaerfarbe: #2ecc71; /* Grün */
+  --akzentfarbe: #e74c3c; /* Rot */
+  --hintergrundfarbe: #ffffff; /* Weiß */
+  --textfarbe: #000000; /* Schwarz */
+  --schriftgröße-klein: 14px;
+  --schriftgröße-mittel: 16px;
+  --schriftgröße-groß: 20px;
+  --schriftart-körper: 'Open Sans', sans-serif;
 
+}
+
+body {
+  font-family: var(--schriftart-körper);
+  font-size: var(--schriftgröße-mittel);
+  line-height: 1.6;
+  color: var(--textfarbe);
+  background-color: var(--hintergrundfarbe);
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   10 Media Queries
+========================= */
+
+
+/* Standard: Mobile */
+.projekte ul {
+  display: flex;
+  flex-direction: column; /* Projekte untereinander */
+  gap: 1rem;
+}
+
+/* Ab 760px – Tablet oder Desktop */
+@media (min-width: 760px) {
+  .projects ul {
+    flex-direction: row; /* Projekte nebeneinander */
+  }
+}
+
+/* Ab 1280px – Großer Desktop */
+@media (min-width: 1280px) {
+  #wrapper {
+    width: 100%;
+  }
+ 
 }
