@@ -109,6 +109,7 @@ header {
   background-color: var(--sekundaerfarbe);
   padding: 1rem 0;
   border-bottom: 1px solid #ddd;
+  width: 100%;
 
 }
 
@@ -118,11 +119,21 @@ header {
 
 
 /* Standard: Mobile */
+@media (max-width: 480px) {
+  
+}
+
+
 html {
-  display: flex;
   flex-direction: column; /* Projekte untereinander */
   gap: 1rem;
   font-size: var(--schriftgröße-klein);
+  width: 100%;
+}
+
+.navigation-list-header {
+    flex-direction: column; /* Navigation untereinander */
+    align-items: flex-end; /* Rechts ausrichten */
 }
 
 /* Ab 760px – Tablet oder Desktop */
@@ -130,6 +141,7 @@ html {
   html {
     flex-direction: row; /* Projekte nebeneinander */
     font-size: var(--schriftgröße-mittel);
+    width: 100%;
   }
 }
 
