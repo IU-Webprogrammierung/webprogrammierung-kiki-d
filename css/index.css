@@ -16,34 +16,46 @@
 /* Projekte Section */
 
 .projects {
-    height: 350px; /* Feste Höhe für die Projekt-Boxen */
+   min-height: 700px; /* Feste Höhe für die Projekt-Boxen */
   padding: 2rem 1rem;
   background-color: #f8f8f8;
   overflow-x: auto; /* Ermöglicht horizontales Scrollen */
   scroll-snap-type: x mandatory; /* Optional: sanftes Einrasten beim Scrollen */
 }
 
-.projects ul {
-  display: flex;
-  gap: 1rem;
+.projects-list {
+  display: flex;                /* horizontale Reihenanordnung */
+  flex-direction: column;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow-x: auto; /* Falls du direkt die UL scrollbar machen willst */
-  scroll-behavior: smooth;
 }
 
-.projects li {
+.projects ul {
+    gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-item{
   flex: 0 0 auto; /* Verhindert, dass Boxen schrumpfen */
-  width: 500px;
+  width: 100%;
   background-color: white;
   padding: 1rem;
   scroll-snap-align: start; /* Für das sanfte Einrasten */
+    box-sizing: border-box;
+
 }
 
-.projects a {
-  display: block;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+.projects img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
 }
+
+.projects h3 {
+  margin: 0 0 0.5rem 0;
+}
+
