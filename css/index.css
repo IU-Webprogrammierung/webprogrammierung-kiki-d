@@ -42,10 +42,8 @@
 
 .projects li {
   flex: 0 0 auto; /* Verhindert, dass Boxen schrumpfen */
-  width: 250px;
+  width: 500px;
   background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   padding: 1rem;
   scroll-snap-align: start; /* Für das sanfte Einrasten */
 }
