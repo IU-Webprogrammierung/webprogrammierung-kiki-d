@@ -131,8 +131,8 @@ header {
 .col-2 { grid-column: span 4; background-color: red;}
 .col-3 { grid-column: span 4; background-color: blue;}
 .col-4 { grid-column: span 4; background-color: green;}
-.col-6 { grid-column: span 8; background-color: orange;}
-.col-8 { grid-column: span 8; background-color: purple;}
+.col-6 { grid-column: span 4; background-color: orange;}
+.col-8 { grid-column: span 4; background-color: purple;}
 .col-12 { grid-column: span 4; background-color: pink;}
 
 
