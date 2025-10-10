@@ -1,12 +1,5 @@
 
 
-.text-container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
 .text-container p {
     flex: 1 1 300px;
     margin: 0;

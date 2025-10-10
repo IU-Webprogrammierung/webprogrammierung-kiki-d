@@ -135,6 +135,33 @@ header {
 .col-8 { grid-column: span 4; background-color: purple;}
 .col-12 { grid-column: span 4; background-color: pink;}
 
+/* Flexbox System */
+
+.flex {
+  display: flex;
+}
+
+/* Ausrichtungen */
+.flex-row { flex-direction: row; }
+.flex-column { flex-direction: column; }
+
+/* Justify Content (Hauptachse) */
+.flex-start   { justify-content: flex-start; }
+.flex-center  { justify-content: center; }
+.flex-end     { justify-content: flex-end; }
+.flex-between { justify-content: space-between; }
+.flex-around  { justify-content: space-around; }
+
+/* Align Items (Querachse) */
+.items-start  { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end    { align-items: flex-end; }
+
+/* Wrap & Gap */
+.flex-wrap { flex-wrap: wrap; }
+.gap-sm { gap: 0.5rem; }
+.gap-md { gap: 1rem; }
+.gap-lg { gap: 2rem; }
 
 /* =========================
    04 Typografie
