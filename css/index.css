@@ -11,6 +11,32 @@
   padding: 0 20px;
 }
 
+section{
+  height: 700px;
+  padding-top: 100px;
+}
+
+/*==========================
+Hero
+========================== */
+
+
+
+.color-hover span {
+  transition: color 0.4s ease;
+  cursor: pointer;
+}
+
+/* unterschiedliche Farben pro Wort */
+.color-hover span:nth-child(1):hover {
+  color: var(--akzentfarbe01); /* z. B. Rosa */
+}
+
+.color-hover span:nth-child(2):hover {
+  color: var(--hauptfarbe03); /* z. B. Grün */
+}
+
+
 /*==========================
 Projekte
 ========================== */
@@ -102,7 +128,46 @@ Projekte
 
 }
 
+/*horizontaler Scrollbalken*/
+
+#projects {
+  position: relative;
+  overflow-x: hidden; /* nativen Scrollbalken ausblenden */
+}
+
+.projects-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: auto; /* Scrollen möglich, aber Balken nicht sichtbar */
+  scrollbar-width: none; /* Firefox */
+}
+.projects-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Fortschrittsbalken */
+.scroll-progress-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 0;
+  background-color: var(--akzentfarbe01);
+  transition: width 0.1s linear;
+  z-index: 1000;
+}
+
+
+/*==========================
+Philosophie
+========================== */
+
+
+
+
 /*==========================
 Über Mich
 ========================== */
-
