@@ -7,3 +7,4 @@ $("header").load("components/header.html", function() {
     navList.classList.toggle('active'); 
   });
 });
+
