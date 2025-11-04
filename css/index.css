@@ -11,7 +11,9 @@
   padding: 0 20px;
 }
 
-/* Projekte Section */
+/*==========================
+Projekte
+========================== */
 
 .projects {
   min-height: 700px;
@@ -81,10 +83,10 @@
 
     .project-item {
       display: flex;
-      flex-direction: row; 
-    gap: 3rem; 
-    width: 1200px;
-    margin: 0 15% 0 0 ;
+      flex-direction: row;
+      gap: 3rem;
+      width: 1200px;
+      margin: 0 15% 0 0;
     }
 
     img {
@@ -96,8 +98,11 @@
       width: 50%;
     }
 
-    
-
   }
 
 }
+
+/*==========================
+Über Mich
+========================== */
+

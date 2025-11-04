@@ -5,6 +5,7 @@ $("header").load("components/header.html", function() {
 
   hamburger.addEventListener('click', () => {
     navList.classList.toggle('active'); 
+    hamburger.classList.toggle('active');
   });
 });
 

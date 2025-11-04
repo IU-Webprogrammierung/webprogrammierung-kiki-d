@@ -267,7 +267,6 @@ a:hover {
 .navigation-list-header {
   list-style: none;
   display: none;            /* Standard: versteckt */
-  flex-direction: column;
   gap: 1rem;
   position: fixed;
   top: 0;
@@ -275,9 +274,11 @@ a:hover {
   width: 100vw;
   height: 100vh;
   background-color: var(--akzentfarbe02);
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  z-index: 100;
+  align-items: flex-start;
+  text-align: center;
+  z-index: 150;
 }
 
  .navigation-list-header.active {
@@ -289,12 +290,14 @@ a:hover {
     font-size: 2rem;
     text-decoration: none;
     padding: 1rem 2rem;
+    text-align: center;
     transition: color 0.3s;
   }
 
   .navigation-list-header li a:hover {
     color: var(--textfarbe);
   }
+
 
 .hamburger {
   display: flex;
@@ -306,15 +309,30 @@ a:hover {
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 100;
+  z-index: 200;
 }
 
 .hamburger span {
-  display: block;
+ display: block;
   height: 3px;
+  width: 100%;
   background-color: var(--textfarbe);
   border-radius: 2px;
+  transition: all 0.3s ease;
 
+}
+
+/* Hamburger zu X animieren */
+.hamburger.active span:nth-child(1) {
+  top: 50%;
+  transform: rotate(45deg) translate(50%);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-45deg) translate(50%);
 }
 
 /* =========================
@@ -345,7 +363,7 @@ body {
   }
 
   .navigation-list-header {
-    display: flex;           /* Navigation immer sichtbar */
+    display: flex !important;           /* Navigation immer sichtbar */
     position: static;
     flex-direction: row;
     gap: 20px;
