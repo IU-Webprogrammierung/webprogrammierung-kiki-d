@@ -21,13 +21,15 @@ Design Plan - Website CSS
 --- 02 Base ---
 
 - Color Palette:
-  - Primary Color: #3498db (Blue)
-  - Secondary Color: #2ecc71 (Green)
-  - Accent Color: #e74c3c (Red)
-  - Background Color: #f5f5f5 (Light Grey)
-  - Text Color: #333333 (Dark Grey)
-  - Light Text Color: #777777 (Medium Grey)
-  - Border Color: #dddddd (Light Grey)
+  - Primary Color: #687D31(Green)
+  - Secondary Color: #2f370C (Dark Green)
+  - Tertiary Color: #6FA9BB (Blue)
+  - Quaternary color: #D5D3CC (Light Grey)
+  - Primary Accent Color: #AFB6E4 (Lavender)
+  - Secondary Accent Color: #D4F6A5 (Neon)
+  - Tertiary Accent Color: #406768 (Turquois)
+  - Backround Color: #FFFFFF (White)
+  - Border Color: #000000 (Black)
 
 - Google Fonts: 
   - Font 1: 'Roboto', sans-serif; (Body text)
@@ -83,11 +85,15 @@ Design Plan - Website CSS
 ========================= */
 
 :root {
-  --hauptfarbe: #3498db; /* Blau */
-  --sekundaerfarbe: #cfcfcf; /* Grau */
-  --akzentfarbe: #e74c3c; /* Rot */
-  --hintergrundfarbe: #ffffff; /* Weiß */
-  --textfarbe: #000000; /* Schwarz */
+  --hauptfarbe01: #687D31; 
+  --hauptfarbe02: #2f370C; 
+  --hauptfarbe03: #6FA9BB;
+  --hauptfarbe04: #D5D3CC;
+  --akzentfarbe01: #AFB6E4; 
+  --akzentfarbe02: #D4F6A5;
+  --akzentfarbe03: #406768;
+  --hintergrundfarbe: #ffffff;
+  --textfarbe: #000000; 
   --schriftgröße-klein: 1rem;
   --schriftgröße-mittel: 1.115rem;
   --schriftgröße-groß: 1.25rem;
@@ -106,7 +112,7 @@ body {
 }
 
 header {
-  background-color: var(--sekundaerfarbe);
+  background-color: var(--hauptfarbe04);
   padding: 1rem 0;
   border-bottom: 1px solid #ddd;
   width: 100%;
@@ -216,8 +222,7 @@ a:hover {
 ========================= */
 
 
-/* Standard: Mobile */
-@media (max-width: 480px) {
+/* Standard: Mobile (360px-759px) */
   body {
     flex-direction: column;
     gap: 1rem;
@@ -234,16 +239,16 @@ a:hover {
     flex-direction: column; /* untereinander */
   }
   
-}
 
 
 
-/* Ab 760px – Tablet oder Desktop */
+/*  Tablet oder Desktop (760px-1279px) */
 @media (min-width: 760px) {
   body {
     flex-direction: row; /* Projekte nebeneinander */
     font-size: var(--schriftgröße-mittel);
     width: 100%;
+    color: #AFB6E4;
   }
   
   .navigation-list-header {
@@ -276,13 +281,14 @@ a:hover {
   .col-12 { grid-column: span 12; }
 }
 
-/* Ab 1280px – Großer Desktop */
+/* Großer Desktop (ab 1280px) */
 @media (min-width: 1280px) {
  
   body {
     gap: 2rem;
     font-size: var(--schriftgröße-groß);
     width: 100%;
+    color: #406768;
   }
 
   .grid-section {

@@ -16,46 +16,46 @@
 /* Projekte Section */
 
 .projects {
-   min-height: 700px; /* Feste Höhe für die Projekt-Boxen */
+  min-height: 700px; /* Feste Höhe für die Projekt-Boxen */
   padding: 2rem 1rem;
   background-color: #f8f8f8;
   overflow-x: auto; /* Ermöglicht horizontales Scrollen */
   scroll-snap-type: x mandatory; /* Optional: sanftes Einrasten beim Scrollen */
-}
 
-.projects-list {
-  display: flex;                /* horizontale Reihenanordnung */
-  flex-direction: column;
-  gap: 2rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  /* Verschachtelte Elemente */
+  .projects-list {
+    display: flex;                
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.projects ul {
+  ul {
     gap: 1rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.project-item{
-  flex: 0 0 auto; /* Verhindert, dass Boxen schrumpfen */
-  width: 100%;
-  background-color: white;
-  padding: 1rem;
-  scroll-snap-align: start; /* Für das sanfte Einrasten */
+  .project-item {
+    flex: 0 0 auto; /* Verhindert, dass Boxen schrumpfen */
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    scroll-snap-align: start; /* Für das sanfte Einrasten */
     box-sizing: border-box;
+  }
 
-}
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
 
-.projects img {
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
-
-.projects h3 {
-  margin: 0 0 0.5rem 0;
+  h3 {
+    margin: 0 0 0.5rem 0;
+  }
 }
 
