@@ -337,7 +337,7 @@ body {
   body {
     font-size: var(--schriftgröße-mittel);
     width: 100%;
-    color: #AFB6E4;
+    color: var(--textfarbe);
   }
 
  .hamburger {
@@ -361,7 +361,8 @@ body {
   }
 
   .navigation-list-header li a:hover {
-    color: var(--hauptfarbe01);
+    color: var(--textfarbe);
+    font-weight: bold;
   }
 }
 
@@ -405,7 +406,7 @@ body {
     gap: 2rem;
     font-size: var(--schriftgröße-groß);
     width: 100%;
-    color: #406768;
+    color: var(--textfarbe);
   }
 
   .grid-section {
