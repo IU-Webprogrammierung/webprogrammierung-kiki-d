@@ -263,6 +263,9 @@ a:hover {
 /*==========================
    05 Navigation - Mobile (Standard)
 ========================== */
+html {
+  scroll-behavior: smooth;
+}
 
 .navigation-list-header {
   list-style: none;
