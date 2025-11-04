@@ -224,6 +224,7 @@ a:hover {
 
 /* Standard: Mobile (360px-759px) */
   body {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     font-size: var(--schriftgröße-klein);
@@ -231,13 +232,12 @@ a:hover {
   }
   
   .navigation-list-header {
+    display: flex;
     flex-direction: column; /* Navigation untereinander */
     align-items: flex-end; /* Rechts ausrichten */
   }
 
-  .projects-list {
-    flex-direction: column; /* untereinander */
-  }
+
   
 
 
@@ -245,7 +245,6 @@ a:hover {
 /*  Tablet oder Desktop (760px-1279px) */
 @media (min-width: 760px) {
   body {
-    flex-direction: row; /* Projekte nebeneinander */
     font-size: var(--schriftgröße-mittel);
     width: 100%;
     color: #AFB6E4;
@@ -259,19 +258,12 @@ a:hover {
   }
 
   .grid-section {
+    display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1rem; /* ~16px */
     padding: 1.5rem;
   }
 
-  .projects-list {
-    flex-direction: row; /* Nebeneinander */
-    overflow-x: auto; /* Ermöglicht horizontales Scrollen */
-  }
-
-  .project-item {
-    width: 50%;
-  }
 
   .col-2 { grid-column: span 2; }
   .col-3 { grid-column: span 3; }
@@ -298,22 +290,5 @@ a:hover {
     margin: 0 auto;
     padding: 2rem;
   }
-
-  .projects-list {
-    flex-direction: row; /* Nebeneinander */
-    overflow-x: auto; /* Ermöglicht horizontales Scrollen */
-  }
-
-  .project-item {
-    width: 50%;               /* maximal die Hälfte des Viewports */
-    max-width: 600px;      
-  }
-
-  .col-2 { grid-column: span 2; }
-  .col-3 { grid-column: span 3; }
-  .col-4 { grid-column: span 4; }
-  .col-6 { grid-column: span 6; }
-  .col-8 { grid-column: span 8; }
-  .col-12 { grid-column: span 12; }
 
 }
