@@ -346,6 +346,73 @@ body.menu-open {
 }
 
 /* =========================
+   07 Inputs, Buttons
+========================= */
+
+/*Pfeil-Button*/
+.btn-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  color: #000000;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.btn-learn-more:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Pfeil aus Linien */
+.arrow {
+  display: inline-block;
+  width: 20px;  /* Basislänge der Linie */
+  height: 2px;  /* Strichstärke */
+  background-color: #000000;
+  position: relative;
+  transition: width 0.3s ease;
+}
+
+.arrow::before,
+.arrow::after {
+  content: '';
+  position: absolute;
+  width: 10px;    /* Größe der Pfeilenden */
+  height: 2px;
+  background-color: #000000;
+  top: 0;
+  right: 0;
+  transform-origin: right center;
+  transition: transform 0.3s ease;
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+}
+
+.arrow::after {
+  transform: rotate(-45deg);
+}
+
+/* Hover-Animation: Pfeil verlängern */
+.btn-learn-more:hover .arrow {
+  width: 35px; /* Linie wächst nach rechts */
+  text-decoration: none;
+}
+
+/*Pfeil-Button Ende*/
+
+
+
+
+/* =========================
    10 Media Queries
 ========================= */
 
