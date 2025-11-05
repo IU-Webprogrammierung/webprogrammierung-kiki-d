@@ -42,124 +42,122 @@ Projekte
 ========================== */
 
 .projects {
-  min-height: 700px;
-  /* Feste Höhe für die Projekt-Boxen */
+  position: relative;
+  height: 100vh;
   padding: 2rem 1rem;
   background-color: #f8f8f8;
-  overflow-x: auto;
-  /* Ermöglicht horizontales Scrollen */
-  scroll-snap-type: x mandatory;
-  /* Optional: sanftes Einrasten beim Scrollen */
-
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    /* Mobile: untereinander */
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow-x: auto;
-  }
-
-  ul {
-    gap: 1rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .project-item {
-    flex: 0 0 auto;
-    /* Verhindert, dass Boxen schrumpfen */
-    width: 100%;
-    background-color: white;
-    padding: 1rem;
-    scroll-snap-align: start;
-    /* Für das sanfte Einrasten */
-    box-sizing: border-box;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-  }
-
-  h3 {
-    margin: 0 0 0.5rem 0;
-  }
-
-  /* Tablet (760px – 1279px) */
-  @media (min-width: 760px) {
-    .projects-list {
-      flex-direction: row;
-      /* Nebeneinander */
-      width: 100%;
-      overflow: auto;
-    }
-
-    .project-item {
-      width: 50%;
-    }
-  }
-
-  /* Desktop (ab 1280px) */
-  @media (min-width: 1280px) {
-
-    .project-item {
-      display: flex;
-      flex-direction: row;
-      gap: 3rem;
-      width: 1200px;
-      margin: 0 15% 0 0;
-    }
-
-    img {
-      width: 50%;
-      margin-bottom: 0;
-    }
-
-    .project-content {
-      width: 50%;
-    }
-
-  }
-
+  overflow: hidden; /* verhindert Scrollbars, Sticky Horizontal auf Desktop */
 }
 
-/*horizontaler Scrollbalken*/
-
-#projects {
-  position: relative;
-  overflow-x: hidden; /* nativen Scrollbalken ausblenden */
-}
-
-.projects-list {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow-x: auto; /* Scrollen möglich, aber Balken nicht sichtbar */
-  scrollbar-width: none; /* Firefox */
-}
-.projects-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge */
+.projects-wrapper {
+  position: relative; /* mobile: normal */
+  height: auto;
+  overflow: visible;
 }
 
 /* Fortschrittsbalken */
 .scroll-progress-bar {
-  position: sticky;
+  position: absolute; /* sticky auf Scrollbar wirkt nicht richtig */
   top: 0;
   left: 0;
-  height: 25px;
+  height: 5px;
   width: 0;
   background-color: var(--akzentfarbe01);
   transition: width 0.1s linear;
   z-index: 1000;
 }
 
+/* Projekte-Liste */
+.projects-list {
+  display: flex;
+  flex-direction: column; /* mobile: untereinander */
+  gap: 2rem;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scrollbar verstecken */
+.projects-list::-webkit-scrollbar {
+  display: none;
+}
+.projects-list {
+  scrollbar-width: none;
+}
+
+/* Projekt-Items */
+.project-item {
+  flex: 0 0 auto;
+  width: 100%; /* Mobile full width */
+  background-color: white;
+  padding: 1rem;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.project-item h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+/*==========================
+Tablet (Sticky horizontal scroll)
+==========================*/
+@media (min-width: 760px) {
+  .projects {
+  position: relative;
+  min-height: 100vh; /* mindestens die Höhe des Viewports */
+  padding: 2rem 1rem;
+  background-color: #f8f8f8;
+  overflow: hidden; /* für Sticky horizontal scroll */
+}
+  
+  .projects-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh; /* Sticky Bereich volle Viewport-Höhe */
+    overflow: hidden;
+  }
+
+  .projects-list {
+    flex-direction: row; /* horizontal */
+    width: max-content;   /* Breite passt sich Items an */
+    height: 100%;         /* füllt Wrapper */
+  }
+
+  .project-item {
+    flex: 0 0 50vw; /* zwei Items pro Viewport */
+  }
+}
+
+/*==========================
+Desktop
+==========================*/
+@media (min-width: 1280px) {
+  .project-item {
+    flex: 0 0 1200px; /* feste Breite */
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin-right: 15%;
+  }
+
+  .project-item img {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .project-content {
+    width: 50%;
+  }
+}
 
 /*==========================
 Philosophie
