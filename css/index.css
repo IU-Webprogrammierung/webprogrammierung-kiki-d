@@ -11,12 +11,9 @@
   padding: 0 20px;
 }
 
-
 /*==========================
 Hero
 ========================== */
-
-
 
 .color-hover span {
   transition: color 0.4s ease;
@@ -38,7 +35,7 @@ Projekte
 ========================== */
 .projects {
   position: relative;
-  background: #f8f8f8;
+  background: linear-gradient(to bottom, #fff, #afb6e4 );
   overflow: hidden;
 }
 
@@ -65,6 +62,11 @@ Projekte
   transition: width 0.1s linear;
 }
 
+.projects h2{
+  padding: 0 20px;
+  margin: 10%  0;
+}
+
 /* Projekte-Liste Mobile */
 .projects-list {
   display: flex;
@@ -72,7 +74,7 @@ Projekte
   gap: 2rem;
   list-style: none;
   margin: 0;
-  padding: 0 50px;
+  padding: 0;
   transition: transform 0.2s ease-out;
   
 }
@@ -81,7 +83,6 @@ Projekte
 .project-item {
   flex: 0 0 auto;
   width: 100%;
-  background: white;
   padding: 1rem;
   border-radius: 8px;
   box-sizing: border-box;
@@ -98,14 +99,12 @@ Projekte
   .projects-list {
     display: flex;
     flex-direction: row;
-    height: 100vh;        /* volle Höhe */
     width: max-content;   /* erlaubt horizontales Scrollen */
  scroll-behavior: smooth;
   }
 
   .project-item {
     flex: 0 0 100vw;      /* jedes Item fullscreen */
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
