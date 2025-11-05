@@ -14,20 +14,48 @@
 /*==========================
 Hero
 ========================== */
+#start{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* voller Viewport */
+  padding: 0;}
 
-.color-hover span {
-  transition: color 0.4s ease;
-  cursor: pointer;
+#hero-title{
+  text-align: center;
+  padding: 40px 0 150px 0;
+  font-size: 4em;
 }
 
-/* unterschiedliche Farben pro Wort */
-.color-hover span:nth-child(1):hover {
-  color: var(--akzentfarbe01); /* z. B. Rosa */
+.cursor {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  width: 120px;
+  height: 120px;
+  opacity: 0;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
 }
 
-.color-hover span:nth-child(2):hover {
-  color: var(--hauptfarbe03); /* z. B. Grün */
+.text-container {
+  display: flex;
+  flex-wrap: wrap;    
 }
+
+.text-container p {
+  background-color: var(--hauptfarbe03); /* deine gewünschte Box-Farbe */
+  color: #d4f6d5;        
+  padding: 20px;                            /* Abstand innen */
+  width: 250px;                             /* feste Breite */
+  height: 250px;                            /* feste Höhe für quadratisch */
+  display: flex;
+  align-items: center;
+  text-align: center;                       /* Mehrzeiliger Text zentriert */
+  box-sizing: border-box;
+  overflow: hidden;                         /* Text nicht aus der Box raus */
+}
+
 
 
 /*==========================
@@ -35,7 +63,7 @@ Projekte
 ========================== */
 .projects {
   position: relative;
-  background: linear-gradient(to bottom, #fff, #afb6e4 );
+  background: linear-gradient(to bottom, #afb6e4, #fff );
   overflow: hidden;
 }
 
@@ -58,7 +86,7 @@ Projekte
 .scroll-progress-bar {
   width: 0%;
   height: 100%;
-  background-color: var(--akzentfarbe01);
+  background-color: var(--akzentfarbe02);
   transition: width 0.1s linear;
 }
 
@@ -84,7 +112,7 @@ Projekte
   flex: 0 0 auto;
   width: 100%;
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 50%;
   box-sizing: border-box;
 }
 
