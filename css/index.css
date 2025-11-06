@@ -95,6 +95,7 @@ Projekte
 
 /* Projekt Items Mobile */
 .project-item {
+  position: relative;
   flex: 0 0 auto;
   width: 100%;
   padding: 1rem;
@@ -107,7 +108,10 @@ Projekte
   /* passt sich der Containerbreite an */
   height: auto;
   margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
+
 
 /* Tablet/Desktop Fullscreen Slider */
 @media (min-width: 760px) {
@@ -210,9 +214,60 @@ Desktop Fixes
   }
 }
 
+
 /*==========================
 Philosophie
 ========================== */
+
+/* Allgemein für alle H3 in Philosophie */
+.philosophy .container-wrapper h3 {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Allgemeines ::before Pseudo-Element */
+.philosophy .container-wrapper h3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 120px;
+  height: 120px;
+  z-index: -1;
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Hover Effekt für alle */
+.philosophy .container-wrapper h3:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Individuelle Farben & Formen */
+.philosophy .container-wrapper h3:nth-child(1)::before {
+  background-color: var(--akzentfarbe02);
+  border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
+}
+
+.philosophy .container-wrapper h3:nth-child(2)::before {
+  background-color: var(--akzentfarbe03);
+  border-radius: 60% 40% 35% 65% / 55% 45% 55% 45%;
+}
+
+.philosophy .container-wrapper h3:nth-child(3)::before {
+  background-color: var(--akzentfarbe01);
+  border-radius: 50% 50% 70% 30% / 50% 60% 40% 50%;
+}
+
+.philosophy .container-wrapper h3:nth-child(4)::before {
+  background-color: var(--hauptfarbe03);
+  border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
+}
 
 
 
