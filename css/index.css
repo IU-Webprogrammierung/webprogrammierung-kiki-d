@@ -120,7 +120,7 @@ Projekte
 ========================== */
 #projects {
   position: relative;
-  background: linear-gradient(to bottom, #afb6e4, #fff);
+  background: var(--akzentfarbe01);
   z-index: 0;
   margin-top: 0;
   padding-top: 0;
@@ -135,7 +135,10 @@ Projekte
   padding: 4rem 20px;
   height: auto;
   color: #fff;
+  background-color: var();
 }
+
+
 
 /* Projekte-Liste Mobile */
 .projects-list {
@@ -167,95 +170,76 @@ Projekte
   z-index: 2;
 }
 
-
-/* Tablet/Desktop Fullscreen Slider */
-@media (min-width: 760px) {
-  .design-wrapper {
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .text-container {
-    flex: 1;
-    /* 50% Breite */
-    gap: 0;
-  }
-
-  .text-container p {
-    flex: 1;
-    width: 100%;
-    margin: 0;
-  }
-
-  .design {
-    flex: 1;
-    display: flex;
-    background: var(--akzentfarbe03);
-  }
-
-  #projects .sticky-wrapper {
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .scroll-bar-wrapper {
-    position: absolute;
-    top: 0;
-    height: 15px;
-    width: 100%;
-    background: transparent;
-  }
-
-  .scroll-progress-bar {
-    width: 0%;
-    height: 100%;
-    background-color: var(--akzentfarbe02);
-    transition: width 0.1s linear;
-  }
-
- .projects h2{
-    padding: 5% 0 0 10%;
-  }
-
-  .projects-list {
-    flex-direction: row;
-    width: max-content;
-    /* erlaubt horizontales Scrollen */
-    scroll-behavior: smooth;
-  }
-
-  .project-item {
-    flex: 0 0 100vw;
-    /* jedes Item fullscreen */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .project-item img {
-    width: 50%;
-    margin-right: 2rem;
-  }
-
-  .project-content {
-    width: 50%;
-  }
-}
-
-
 /*==========================
-Desktop Fixes
+weitere Projekte
 ==========================*/
-@media (min-width: 1280px) {
-  .project-item {
-    flex: 0 0 1200px;
-    gap: 3rem;
-    margin-right: 15%;
-  }
 
+.image-gallery {
+  padding: 2.5rem 1rem;
+  max-width: 1200px;
+  margin: 0% auto;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Quadrat-Container */
+.gallery-item {
+  aspect-ratio: 1 / 1;   
+  overflow: hidden;
+  background: #eee;
+}
+
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;          
+  object-fit: cover;     
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.hover-box {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.hover-box img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hover-box:hover img {
+  transform: scale(1.05);
+}
+
+.hover-text {
+  position: absolute;
+  inset: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hauptfarbe03);
+  color: #fff;
+  font-size: clamp(1rem, 2.6vw, 1.4rem);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding:  40px;
+}
+
+.hover-box:hover .hover-text {
+  opacity: 1;
+}
 
 /*==========================
 Philosophie
@@ -315,3 +299,100 @@ Philosophie
 /*==========================
 Über Mich
 ========================== */
+
+/* Tablet/Desktop Fullscreen Slider */
+@media (min-width: 760px) {
+  .design-wrapper {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .text-container {
+    flex: 1;
+    /* 50% Breite */
+    gap: 0;
+  }
+
+  .text-container p {
+    flex: 1;
+    width: 100%;
+    margin: 0;
+  }
+
+  .design {
+    flex: 1;
+    display: flex;
+    background: var(--akzentfarbe03);
+  }
+
+  #projects .sticky-wrapper {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .scroll-bar-wrapper {
+    position: absolute;
+    top: 0;
+    height: 15px;
+    width: 100%;
+    background: transparent;
+  }
+
+  .scroll-progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--akzentfarbe02);
+    transition: width 0.1s linear;
+  }
+
+  .projects h2 {
+    padding: 5% 0 0 10%;
+  }
+
+  .projects-list {
+    flex-direction: row;
+    width: max-content;
+    /* erlaubt horizontales Scrollen */
+    scroll-behavior: smooth;
+  }
+
+  .project-item {
+    flex: 0 0 100vw;
+    /* jedes Item fullscreen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-item img {
+    width: 50%;
+    margin-right: 2rem;
+  }
+
+  .project-content {
+    width: 50%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/*==========================
+Desktop Fixes
+==========================*/
+@media (min-width: 1280px) {
+  .project-item {
+    flex: 0 0 1200px;
+    gap: 3rem;
+    margin-right: 15%;
+  }
+
+   .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
