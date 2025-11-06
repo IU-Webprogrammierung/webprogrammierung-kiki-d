@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cursor.classList.add("cursor");
     document.body.appendChild(cursor);
 
-    const cursorRadius = 50; 
+    const cursorRadius = 50;
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
     const ease = 0.2;

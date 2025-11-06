@@ -1,11 +1,11 @@
-.text-container p {
-  flex: 1 1 300px;
-  margin: 0;
-  font-size: var(--schriftgröße-mittel);
-  line-height: 1.5;
+.page-wrapper {
+  position: relative;
+  z-index: 0;
 }
 
 .container-wrapper {
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -14,17 +14,20 @@
 /*==========================
 Hero
 ========================== */
-#start{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* voller Viewport */
-  padding: 0;}
 
-#hero-title{
+
+#start {
+  height: auto;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+#hero-title {
   text-align: center;
   padding: 40px 0 150px 0;
   font-size: 4em;
+  margin: 0;
 }
 
 .cursor {
@@ -38,61 +41,45 @@ Hero
   transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
 }
 
+
+
 .text-container {
   display: flex;
-  flex-wrap: wrap;    
+  flex-direction: column;
+  align-items: center;
 }
 
 .text-container p {
-  background-color: var(--hauptfarbe03); /* deine gewünschte Box-Farbe */
-  color: #d4f6d5;        
-  padding: 20px;                            /* Abstand innen */
-  width: 250px;                             /* feste Breite */
-  height: 250px;                            /* feste Höhe für quadratisch */
-  display: flex;
-  align-items: center;
-  text-align: center;                       /* Mehrzeiliger Text zentriert */
-  box-sizing: border-box;
-  overflow: hidden;                         /* Text nicht aus der Box raus */
+  background-color: var(--akzentfarbe03);
+  color: #fff;
+  padding: 40px;
 }
 
+.text-container .design-text {
+  background-color: var(--hauptfarbe04);
+  color: var(--akzentfarbe03);
+}
 
 
 /*==========================
 Projekte
 ========================== */
-.projects {
+#projects {
   position: relative;
-  background: linear-gradient(to bottom, #afb6e4, #fff );
-  overflow: hidden;
+  background: linear-gradient(to bottom, #afb6e4, #fff);
+  z-index: 0;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .sticky-wrapper {
   position: relative;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+  height: auto;
 }
 
-.scroll-bar-wrapper {
-  position: absolute;
-  top: 0;
-  height: 15px;
-  width: 100%;
-  background: transparent;
-}
-
-.scroll-progress-bar {
-  width: 0%;
-  height: 100%;
-  background-color: var(--akzentfarbe02);
-  transition: width 0.1s linear;
-}
-
-.projects h2{
+.projects h2 {
   padding: 0 20px;
-  margin: 10%  0;
+  margin: 10% 0;
 }
 
 /* Projekte-Liste Mobile */
@@ -104,7 +91,6 @@ Projekte
   margin: 0;
   padding: 0;
   transition: transform 0.2s ease-out;
-  
 }
 
 /* Projekt Items Mobile */
@@ -117,22 +103,86 @@ Projekte
 }
 
 .project-item img {
-  width: 100%; /* passt sich der Containerbreite an */
+  width: 100%;
+  /* passt sich der Containerbreite an */
   height: auto;
   margin-bottom: 1rem;
 }
 
 /* Tablet/Desktop Fullscreen Slider */
 @media (min-width: 760px) {
+
+  .design-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .design-heading {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .design-heading h2 {
+    background-color: var(--akzentfarbe02);
+    color: var(--hauptfarbe03);
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .text-container {
+    flex: 1;
+    /* 50% Breite */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+   .text-container p {
+    flex: 1; 
+    width: 100%;
+    margin: 0;
+  }
+
+  #projects .sticky-wrapper {
+    position: relative;
+    margin-top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .scroll-bar-wrapper {
+    position: absolute;
+    top: 0;
+    height: 15px;
+    width: 100%;
+    background: transparent;
+  }
+
+  .scroll-progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--akzentfarbe02);
+    transition: width 0.1s linear;
+  }
+
   .projects-list {
     display: flex;
     flex-direction: row;
-    width: max-content;   /* erlaubt horizontales Scrollen */
- scroll-behavior: smooth;
+    width: max-content;
+    /* erlaubt horizontales Scrollen */
+    scroll-behavior: smooth;
   }
 
   .project-item {
-    flex: 0 0 100vw;      /* jedes Item fullscreen */
+    flex: 0 0 100vw;
+    /* jedes Item fullscreen */
     display: flex;
     align-items: center;
     justify-content: center;
