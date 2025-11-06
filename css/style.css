@@ -245,6 +245,10 @@ h6 {
   line-height: 1.2;
 }
 
+h2 {
+font-size: 2rem;
+}
+
 p {
   font-family: var(--schriftart-körper);
   font-weight: 400;
@@ -373,8 +377,10 @@ body.menu-open {
 /* Pfeil aus Linien */
 .arrow {
   display: inline-block;
-  width: 20px;  /* Basislänge der Linie */
-  height: 2px;  /* Strichstärke */
+  width: 20px;
+  /* Basislänge der Linie */
+  height: 2px;
+  /* Strichstärke */
   background-color: #000000;
   position: relative;
   transition: width 0.3s ease;
@@ -384,7 +390,8 @@ body.menu-open {
 .arrow::after {
   content: '';
   position: absolute;
-  width: 10px;    /* Größe der Pfeilenden */
+  width: 10px;
+  /* Größe der Pfeilenden */
   height: 2px;
   background-color: #000000;
   top: 0;
@@ -403,7 +410,8 @@ body.menu-open {
 
 /* Hover-Animation: Pfeil verlängern */
 .btn-learn-more:hover .arrow {
-  width: 35px; /* Linie wächst nach rechts */
+  width: 35px;
+  /* Linie wächst nach rechts */
   text-decoration: none;
 }
 

@@ -25,35 +25,44 @@ Hero
 
 #hero-title {
   text-align: center;
-  padding: 40px 0 150px 0;
+  padding: 30% 0 0;
   font-size: 4em;
   margin: 0;
 }
 
 .cursor {
-  position: absolute;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  mix-blend-mode: difference;
+  position: fixed;
   pointer-events: none;
-  width: 120px;
-  height: 120px;
+  mix-blend-mode: difference;
+  background-color: #fff;
   opacity: 0;
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inspirations-text {
+  color: #000;
+  display: block;
+  max-width: 400px;
+  width: fit-content;
+  margin-bottom: 30%;
 }
 
 .design-wrapper {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-    background-color: var(--akzentfarbe03);
+  background-color: var(--akzentfarbe03);
 
-}
-
-.design-heading {
-  flex: 1;
-  display: flex;
-  align-items: stretch;
-  padding: 0 70px;
 }
 
 .design-heading {
@@ -63,16 +72,12 @@ Hero
   align-items: center;
   text-align: center;
   margin: 0;
+  padding: 0 70px;
   height: 300px;
 }
 
 .design {
   color: #fff;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
 }
 
 .deutsch:before,
@@ -100,7 +105,6 @@ Hero
 
 .text-container p {
   background-color: #fff;
-  color: var(--textfarbe);
   padding: 70px 50px;
   margin: 0;
 }
@@ -167,7 +171,6 @@ Projekte
 /* Tablet/Desktop Fullscreen Slider */
 @media (min-width: 760px) {
   .design-wrapper {
-    display: flex;
     flex-direction: row;
     align-items: center;
   }
@@ -175,8 +178,6 @@ Projekte
   .text-container {
     flex: 1;
     /* 50% Breite */
-    display: flex;
-    flex-direction: column;
     gap: 0;
   }
 
@@ -187,21 +188,12 @@ Projekte
   }
 
   .design {
-    display: flex;
     flex: 1;
+    display: flex;
     background: var(--akzentfarbe03);
   }
 
-  .design-heading h2 {
-    position: center;
-    flex-direction: ;
-    height: 550px;
-    /* gewünschte Desktop-Höhe */
-  }
-
   #projects .sticky-wrapper {
-    position: relative;
-    margin-top: 0;
     height: 100vh;
     width: 100%;
     overflow: hidden;
@@ -223,7 +215,6 @@ Projekte
   }
 
   .projects-list {
-    display: flex;
     flex-direction: row;
     width: max-content;
     /* erlaubt horizontales Scrollen */
@@ -274,7 +265,6 @@ Philosophie
   z-index: 1;
 }
 
-/* Allgemeines ::before Pseudo-Element */
 .philosophy .container-wrapper h3::before {
   content: "";
   position: absolute;
@@ -288,13 +278,11 @@ Philosophie
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* Hover Effekt für alle */
 .philosophy .container-wrapper h3:hover::before {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
 
-/* Individuelle Farben & Formen */
 .philosophy .container-wrapper h3:nth-child(1)::before {
   background-color: var(--akzentfarbe02);
   border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
@@ -314,6 +302,7 @@ Philosophie
   background-color: var(--hauptfarbe03);
   border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
 }
+
 
 
 

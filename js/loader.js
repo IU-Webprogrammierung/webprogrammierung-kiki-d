@@ -82,10 +82,9 @@ $("header").load("components/header.html", function () {
 
 
 //Hero-Title
-
 document.addEventListener("DOMContentLoaded", () => {
-    const title = document.querySelector("#hero-title");
-    if (!title) return;
+    const heroWrapper = document.querySelector(".hero-wrapper");
+    if (!heroWrapper) return;
 
     const cursor = document.createElement("div");
     cursor.classList.add("cursor");
@@ -102,28 +101,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function animate() {
+        // Cursor gleitend bewegen
         cursorX += (mouseX - cursorX) * ease;
         cursorY += (mouseY - cursorY) * ease;
-
         cursor.style.left = `${cursorX - cursorRadius}px`;
         cursor.style.top = `${cursorY - cursorRadius}px`;
 
-        const rect = title.getBoundingClientRect();
-        const overTitle = mouseX > rect.left && mouseX < rect.right && mouseY > rect.top && mouseY < rect.bottom;
+        // Sichtbarkeit nur im Hero Wrapper
+        const wrapperRect = heroWrapper.getBoundingClientRect();
+        const overWrapper =
+            mouseX > wrapperRect.left && mouseX < wrapperRect.right &&
+            mouseY > wrapperRect.top && mouseY < wrapperRect.bottom;
 
-        if (overTitle) {
-            cursor.style.opacity = "1";
-            cursor.style.backgroundColor = "#ffffff"; // Farbe beim Hover
-        } else {
-            cursor.style.opacity = "0";
-            cursor.style.backgroundColor = "transparent"; // unsichtbar
-        }
+        cursor.style.opacity = overWrapper ? "1" : "0";
+        cursor.style.backgroundColor = overWrapper ? "#fff" : "transparent";
 
         requestAnimationFrame(animate);
     }
 
     animate();
 });
+
 
 
 
