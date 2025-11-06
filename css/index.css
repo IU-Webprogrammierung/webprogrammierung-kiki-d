@@ -41,7 +41,51 @@ Hero
   transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
 }
 
+.design-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 
+.design-heading {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
+.design-heading h2 {
+  background-color: var(--akzentfarbe03);
+  color: #fff;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  height: 300px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.deutsch:before,
+.english:before {
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--akzentfarbe03);
+  margin-top: 1em;
+  margin-right: 3em;
+}
+
+.deutsch:before {
+  content: "DE";
+}
+
+.english:before {
+  content: "ENG";
+}
 
 .text-container {
   display: flex;
@@ -50,14 +94,15 @@ Hero
 }
 
 .text-container p {
-  background-color: var(--akzentfarbe03);
-  color: #fff;
-  padding: 40px;
+  background-color: #fff;
+  color: var(--textfarbe);
+  padding: 50px;
+  margin: 0;
 }
 
 .text-container .design-text {
   background-color: var(--hauptfarbe04);
-  color: var(--akzentfarbe03);
+  color: var(--textfarbe);
 }
 
 
@@ -80,6 +125,7 @@ Projekte
 .projects h2 {
   padding: 0 20px;
   margin: 10% 0;
+  height: auto;
 }
 
 /* Projekte-Liste Mobile */
@@ -115,28 +161,10 @@ Projekte
 
 /* Tablet/Desktop Fullscreen Slider */
 @media (min-width: 760px) {
-
   .design-wrapper {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-  }
-
-  .design-heading {
-    flex: 1;
-    display: flex;
-    align-items: stretch;
-  }
-
-  .design-heading h2 {
-    background-color: var(--akzentfarbe02);
-    color: var(--hauptfarbe03);
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0;
   }
 
   .text-container {
@@ -147,10 +175,15 @@ Projekte
     gap: 0;
   }
 
-   .text-container p {
-    flex: 1; 
+  .text-container p {
+    flex: 1;
     width: 100%;
     margin: 0;
+  }
+
+  .design-heading h2 {
+    height: 550px;
+    /* gewünschte Desktop-Höhe */
   }
 
   #projects .sticky-wrapper {
