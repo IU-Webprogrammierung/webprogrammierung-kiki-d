@@ -45,17 +45,18 @@ Hero
   display: flex;
   flex-direction: column;
   align-items: stretch;
+    background-color: var(--akzentfarbe03);
+
 }
 
 .design-heading {
   flex: 1;
   display: flex;
   align-items: stretch;
+  padding: 0 70px;
 }
 
-.design-heading h2 {
-  background-color: var(--akzentfarbe03);
-  color: #fff;
+.design-heading {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -63,6 +64,10 @@ Hero
   text-align: center;
   margin: 0;
   height: 300px;
+}
+
+.design {
+  color: #fff;
 }
 
 .text-container {
@@ -96,7 +101,7 @@ Hero
 .text-container p {
   background-color: #fff;
   color: var(--textfarbe);
-  padding: 50px;
+  padding: 70px 50px;
   margin: 0;
 }
 
@@ -164,7 +169,7 @@ Projekte
   .design-wrapper {
     display: flex;
     flex-direction: row;
-    align-items: stretch;
+    align-items: center;
   }
 
   .text-container {
@@ -181,7 +186,15 @@ Projekte
     margin: 0;
   }
 
+  .design {
+    display: flex;
+    flex: 1;
+    background: var(--akzentfarbe03);
+  }
+
   .design-heading h2 {
+    position: center;
+    flex-direction: ;
     height: 550px;
     /* gewünschte Desktop-Höhe */
   }
