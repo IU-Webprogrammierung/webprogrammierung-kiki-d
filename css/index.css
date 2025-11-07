@@ -216,23 +216,17 @@ weitere Projekte
 .image-gallery {
   padding: 2.5rem 1rem;
   max-width: 1200px;
-  margin: 0% auto;
+  margin: 0 auto;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
+  justify-content: center;
   gap: 1rem;
 }
 
 /* Quadrat-Container */
-.gallery-item {
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #eee;
-}
-
-
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -245,21 +239,11 @@ weitere Projekte
   transform: scale(1.05);
 }
 
-.hover-box {
+.gallery-item {
+  aspect-ratio: 1 / 1;
   position: relative;
-  display: inline-block;
   overflow: hidden;
-  min-height: 300px;
-}
-
-.hover-box img {
-  width: 100%;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.hover-box:hover img {
-  transform: scale(1.05);
+  min-height: 370px;
 }
 
 .hover-text {
@@ -268,15 +252,16 @@ weitere Projekte
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--hauptfarbe03);
+  background: var(--textfarbe);
   color: #fff;
-  font-size: clamp(1rem, 2.6vw, 1.4rem);
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
   opacity: 0;
   transition: opacity 0.3s ease;
   padding: 40px;
 }
 
-.hover-box:hover .hover-text {
+.gallery-item:hover figcaption,
+.gallery-item:focus-within figcaption {
   opacity: 1;
 }
 
@@ -285,7 +270,7 @@ Philosophie
 ========================== */
 
 /* Allgemein für alle H3 in Philosophie */
-.philosophy  h3 {
+.philosophy h3 {
   position: relative;
   display: inline-block;
   text-align: center;
@@ -294,7 +279,7 @@ Philosophie
   z-index: 1;
 }
 
-.philosophy  h3::before {
+.philosophy h3::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -334,24 +319,24 @@ Philosophie
 
 .philosophy-wrapper {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 20px;
 }
 
 .philosophy-content {
-    flex: 1 1 50%;  
-    box-sizing: border-box;
-    background-color: var(--akzentfarbe03); 
-    color: #fff;
-    padding: 70px 50px;
-    margin: 0;
-  
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  background-color: var(--akzentfarbe03);
+  color: #fff;
+  padding: 70px 50px;
+  margin: 0;
+
 }
 
 .philosophy-sidebar {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-    padding: 20px;
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 
@@ -438,7 +423,6 @@ Media Queries
   .design {
     flex: 1;
     display: flex;
-    background: var(--akzentfarbe03);
   }
 
   #projects .sticky-wrapper {
@@ -511,21 +495,21 @@ Desktop Fixes
   }
 
   .philosophy-wrapper {
-    flex-direction: row;      
+    flex-direction: row;
     gap: 40px;
-    align-items: stretch;   
+    align-items: stretch;
   }
 
   .philosophy-content,
   .philosophy-sidebar {
-    flex: 1 1 50%;           
+    flex: 1 1 50%;
     box-sizing: border-box;
   }
 
   /* Sidebar links vom Content */
   .philosophy-sidebar {
-    order: -1;     
-    padding: 100px 0;                   
+    order: -1;
+    padding: 100px 0;
   }
 
   /* Content Hintergrundfarbe */
