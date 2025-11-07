@@ -59,7 +59,7 @@ Hero
 /*Balken-Abschnitt*/
 .text-strip {
   width: 100%;
-  overflow: hidden;       
+  overflow: hidden;
   background-color: #000;
   color: white;
   padding: 20px 0;
@@ -70,19 +70,18 @@ Hero
   display: inline-flex;
   flex-shrink: 0;
   width: max-content;
-  white-space: nowrap;    
-  animation: scroll 50s linear infinite; 
+  white-space: nowrap;
+  animation: scroll 50s linear infinite;
 }
 
 .text-track span {
   display: inline-block;
   margin-right: 50px;
   flex-shrink: 0;
-
 }
 
 .highlight {
-font-weight: 100;
+  font-weight: 100;
 }
 
 
@@ -90,6 +89,7 @@ font-weight: 100;
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -100,7 +100,7 @@ font-weight: 100;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background-color: var(--akzentfarbe03);
+  background-color: var(--hauptfarbe03);
 
 }
 
@@ -285,15 +285,16 @@ Philosophie
 ========================== */
 
 /* Allgemein für alle H3 in Philosophie */
-.philosophy .container-wrapper h3 {
+.philosophy  h3 {
   position: relative;
   display: inline-block;
+  text-align: center;
   padding: 1rem 2rem;
   cursor: pointer;
   z-index: 1;
 }
 
-.philosophy .container-wrapper h3::before {
+.philosophy  h3::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -331,8 +332,27 @@ Philosophie
   border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
 }
 
+.philosophy-wrapper {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+}
 
+.philosophy-content {
+    flex: 1 1 50%;  
+    box-sizing: border-box;
+    background-color: var(--akzentfarbe03); 
+    color: #fff;
+    padding: 70px 50px;
+    margin: 0;
+  
+}
 
+.philosophy-sidebar {
+    flex: 1 1 50%;
+    box-sizing: border-box;
+    padding: 20px;
+}
 
 
 /*==========================
@@ -353,7 +373,8 @@ Adresse
 
 .adress-wrapper {
   margin: 0 auto;
-  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contact-text {
@@ -367,6 +388,7 @@ Adresse
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  width: 100%;
   max-width: 700px;
 }
 
@@ -471,7 +493,6 @@ Media Queries
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 
@@ -489,4 +510,28 @@ Desktop Fixes
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .philosophy-wrapper {
+    flex-direction: row;      
+    gap: 40px;
+    align-items: stretch;   
+  }
+
+  .philosophy-content,
+  .philosophy-sidebar {
+    flex: 1 1 50%;           
+    box-sizing: border-box;
+  }
+
+  /* Sidebar links vom Content */
+  .philosophy-sidebar {
+    order: -1;     
+    padding: 100px 0;                   
+  }
+
+  /* Content Hintergrundfarbe */
+  .philosophy-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
