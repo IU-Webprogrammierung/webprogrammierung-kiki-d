@@ -81,6 +81,11 @@ Hero
 
 }
 
+.highlight {
+font-weight: 100;
+}
+
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
