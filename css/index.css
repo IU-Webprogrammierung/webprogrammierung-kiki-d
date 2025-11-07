@@ -52,11 +52,45 @@ Hero
 .inspirations-text {
   color: #000;
   display: block;
-  max-width: 400px;
   width: fit-content;
   margin-bottom: 30%;
 }
 
+/*Balken-Abschnitt*/
+.text-strip {
+  width: 100%;
+  overflow: hidden;       
+  background-color: #000;
+  color: white;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.text-track {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: max-content;
+  white-space: nowrap;    
+  animation: scroll 50s linear infinite; 
+}
+
+.text-track span {
+  display: inline-block;
+  margin-right: 50px;
+  flex-shrink: 0;
+
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/*Design-Abschnitt*/
 .design-wrapper {
   display: flex;
   flex-direction: column;
@@ -305,7 +339,7 @@ Adresse
 ========================== */
 
 .adress {
-  background-color: var(--akzentfarbe02);
+  background-color: var(--akzentfarbe01);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -348,7 +382,7 @@ input:focus,
 textarea:focus {
   outline: none;
   border: 3px solid;
-  border-color: var(--akzentfarbe01);
+  border-color: var(--akzentfarbe02);
 }
 
 /*==========================
