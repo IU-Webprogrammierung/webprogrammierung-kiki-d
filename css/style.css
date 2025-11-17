@@ -414,33 +414,33 @@ body {
   margin-bottom: 30%;
 }
 
-  /* Balken-Abschnitt */
-  .text-strip {
-    width: 100%;
-    overflow: hidden;
-    background-color: #000;
-    color: white;
-    padding: 20px 0;
-    font-size: 20px;
+/* Balken-Abschnitt */
+.text-strip {
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  color: white;
+  padding: 20px 0;
+  font-size: 20px;
 
-    .text-track {
-      display: inline-flex;
+  .text-track {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: max-content;
+    white-space: nowrap;
+    animation: scroll 50s linear infinite;
+
+    span {
+      display: inline-block;
+      margin-right: 50px;
       flex-shrink: 0;
-      width: max-content;
-      white-space: nowrap;
-      animation: scroll 50s linear infinite;
+    }
 
-      span {
-        display: inline-block;
-        margin-right: 50px;
-        flex-shrink: 0;
-      }
-
-      .highlight {
-        font-weight: 100;
-      }
+    .highlight {
+      font-weight: 100;
     }
   }
+}
 
 
 
@@ -652,9 +652,14 @@ body {
 ==========================*/
 
 .image-gallery {
-  padding: 2.5rem 1rem;
-  max-width: 1200px;
+  padding: 2.5rem 0;
   margin: 0 auto;
+  background-color: var(--akzentfarbe02);
+
+  h2 {
+    padding: 0 20px;
+  }
+
 }
 
 .gallery-grid {
@@ -681,7 +686,6 @@ body {
   aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
-  min-height: 370px;
 }
 
 .hover-text {
@@ -760,30 +764,35 @@ body {
   }
 }
 
+
 /*==========================
    14 Inhalt: Footer
 ========================== */
+
 #footer {
-    background-color: var(--akzentfarbe03);
-    padding: 1rem 2rem;
-    p{
-      color: white;
-    }
+  background-color: var(--akzentfarbe03);
+  padding: 1rem 2rem;
+
+  p {
+    color: white;
+  }
 }
 
 .footer-content {
-    display: flex;
-    flex-direction: column; /* Mobil: untereinander */
-    gap: 0.5rem;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  /* Mobil: untereinander */
+  gap: 0.5rem;
+  align-items: flex-start;
 }
 
 /* Buttons Styling */
 .footer-buttons {
-    display: flex;
-    flex-direction: column; /* Mobil: untereinander */
-    gap: 0.5rem;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Mobil: untereinander */
+  gap: 0.5rem;
+  width: 100%;
 }
 
 .footer-button {
@@ -849,20 +858,20 @@ body {
       }
     }
 
-       .footer-content {
-        flex-direction: row; /* Desktop: Text links, Buttons rechts */
-        justify-content: space-between;
-        align-items: center;
+    .footer-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .footer-buttons {
-        flex-direction: row; /* Buttons nebeneinander */
-        width: auto;
-        gap: 0.5rem;
+      flex-direction: row;
+      width: auto;
+      gap: 0.5rem;
     }
 
     .footer-button {
-        width: auto;
+      width: auto;
     }
   }
 }
