@@ -128,17 +128,18 @@ const form = document.getElementById('contact-form');
 const status = document.getElementById('status');
 
 form.addEventListener('submit', async (e) => {
-  e.preventDefault();
+  e.preventDefault(); 
 
   const formData = new FormData(form);
 
   try {
-    const response = await fetch('send-email.php', {
+    const response = await fetch('send-email.php', { 
       method: 'POST',
       body: formData
     });
     const text = await response.text();
     status.textContent = text;
+    form.reset();
   } catch (err) {
     status.textContent = 'Fehler beim Senden der Nachricht';
   }
