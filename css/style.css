@@ -16,8 +16,9 @@ Design Plan - Website CSS
 11 Inhalt: weitere Projekte
 12 Inhalt: Über Mich
 13 Inhalt: Kontakt
-14 Media Queries
-15 Desktop Fixes
+14 Inhalt: Footer
+15 Media Queries
+16 Desktop Fixes
 
 ------------------------------------------
 
@@ -326,6 +327,7 @@ body {
   &:hover {
     background-color: #000;
     color: #fff;
+    text-decoration: none;
   }
 }
 
@@ -758,9 +760,52 @@ body {
   }
 }
 
+/*==========================
+   14 Inhalt: Footer
+========================== */
+#footer {
+    background-color: var(--akzentfarbe03);
+    padding: 1rem 2rem;
+    p{
+      color: white;
+    }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Mobil: untereinander */
+    gap: 0.5rem;
+    align-items: flex-start;
+}
+
+/* Buttons Styling */
+.footer-buttons {
+    display: flex;
+    flex-direction: column; /* Mobil: untereinander */
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.footer-button {
+  background: white;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 150px;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--hauptfarbe03);
+    color: white;
+    text-decoration: none;
+  }
+}
 
 /*==========================
-   14 Media Queries
+   15 Media Queries
 ========================== */
 body {
   display: flex;
@@ -803,6 +848,22 @@ body {
           }
         }
       }
+    }
+
+       .footer-content {
+        flex-direction: row; /* Desktop: Text links, Buttons rechts */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-buttons {
+        flex-direction: row; /* Buttons nebeneinander */
+        width: auto;
+        gap: 0.5rem;
+    }
+
+    .footer-button {
+        width: auto;
     }
   }
 }
@@ -910,7 +971,7 @@ body {
 
 
 /*==========================
-   15 Desktop Fixes
+   16 Desktop Fixes
 ==========================*/
 @media (min-width: 1280px) {
   .project-item {
