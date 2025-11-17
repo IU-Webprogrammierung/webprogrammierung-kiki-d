@@ -785,6 +785,7 @@ h2 {
   object-fit: cover;
   display: block;
   transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 .gallery-item:hover img {
