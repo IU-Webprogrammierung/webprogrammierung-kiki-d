@@ -123,4 +123,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Galerie / Click Funktion für mobile Geräte
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.gallery-item').forEach(i => {
+      if (i !== item) i.classList.remove('hovered');
+    });
+
+    item.classList.toggle('hovered');
+  });
+});
+
+
 
