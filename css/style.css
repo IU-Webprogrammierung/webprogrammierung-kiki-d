@@ -376,7 +376,7 @@ body {
 }
 
 /* =========================
-   10 Media Queries
+   08 Media Queries
 ========================= */
 
 
@@ -449,7 +449,7 @@ body {
 }
 
 /* =========================
-   09 Ppage Wrapper, Hero
+   09 Page Wrapper
 ========================= */
 
 .page-wrapper {
@@ -466,7 +466,7 @@ body {
 }
 
 /*==========================
-Hero
+   10 Hero
 ========================== */
 
 
@@ -510,33 +510,34 @@ Hero
   margin-bottom: 30%;
 }
 
-/*Balken-Abschnitt*/
-.text-strip {
-  width: 100%;
-  overflow: hidden;
-  background-color: #000;
-  color: white;
-  padding: 20px 0;
-  font-size: 20px;
-}
+  /* Balken-Abschnitt */
+  .text-strip {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+    color: white;
+    padding: 20px 0;
+    font-size: 20px;
 
-.text-track {
-  display: inline-flex;
-  flex-shrink: 0;
-  width: max-content;
-  white-space: nowrap;
-  animation: scroll 50s linear infinite;
-}
+    .text-track {
+      display: inline-flex;
+      flex-shrink: 0;
+      width: max-content;
+      white-space: nowrap;
+      animation: scroll 50s linear infinite;
 
-.text-track span {
-  display: inline-block;
-  margin-right: 50px;
-  flex-shrink: 0;
-}
+      span {
+        display: inline-block;
+        margin-right: 50px;
+        flex-shrink: 0;
+      }
 
-.highlight {
-  font-weight: 100;
-}
+      .highlight {
+        font-weight: 100;
+      }
+    }
+  }
+
 
 
 @keyframes scroll {
@@ -609,6 +610,86 @@ Hero
 
 
 /*==========================
+Philosophie
+========================== */
+
+/* Allgemein für alle H3 in Philosophie */
+.philosophy {
+  h3 {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 120px;
+      height: 120px;
+      z-index: -1;
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+  }
+
+  .container-wrapper {
+    h3 {
+      &:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+
+      &:nth-child(1)::before {
+        background-color: var(--akzentfarbe02);
+        border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
+      }
+
+      &:nth-child(2)::before {
+        background-color: var(--akzentfarbe03);
+        border-radius: 60% 40% 35% 65% / 55% 45% 55% 45%;
+      }
+
+      &:nth-child(3)::before {
+        background-color: var(--akzentfarbe01);
+        border-radius: 50% 50% 70% 30% / 50% 60% 40% 50%;
+      }
+
+      &:nth-child(4)::before {
+        background-color: var(--hauptfarbe03);
+        border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
+      }
+    }
+  }
+}
+
+.philosophy-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.philosophy-content {
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  background-color: var(--akzentfarbe03);
+  color: #fff;
+  padding: 70px 50px;
+  margin: 0;
+
+}
+
+.philosophy-sidebar {
+  flex: 1 1 50%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/*==========================
 Projekte
 ========================== */
 #projects {
@@ -628,7 +709,6 @@ Projekte
   padding: 4rem 20px;
   height: auto;
   color: #fff;
-  background-color: var();
 }
 
 
@@ -719,80 +799,6 @@ weitere Projekte
   opacity: 1;
 }
 
-/*==========================
-Philosophie
-========================== */
-
-/* Allgemein für alle H3 in Philosophie */
-.philosophy h3 {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.philosophy h3::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  width: 120px;
-  height: 120px;
-  z-index: -1;
-  opacity: 0;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.philosophy .container-wrapper h3:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-  opacity: 1;
-}
-
-.philosophy .container-wrapper h3:nth-child(1)::before {
-  background-color: var(--akzentfarbe02);
-  border-radius: 40% 60% 65% 35% / 40% 35% 65% 60%;
-}
-
-.philosophy .container-wrapper h3:nth-child(2)::before {
-  background-color: var(--akzentfarbe03);
-  border-radius: 60% 40% 35% 65% / 55% 45% 55% 45%;
-}
-
-.philosophy .container-wrapper h3:nth-child(3)::before {
-  background-color: var(--akzentfarbe01);
-  border-radius: 50% 50% 70% 30% / 50% 60% 40% 50%;
-}
-
-.philosophy .container-wrapper h3:nth-child(4)::before {
-  background-color: var(--hauptfarbe03);
-  border-radius: 30% 70% 60% 40% / 60% 40% 50% 50%;
-}
-
-.philosophy-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.philosophy-content {
-  flex: 1 1 50%;
-  box-sizing: border-box;
-  background-color: var(--akzentfarbe03);
-  color: #fff;
-  padding: 70px 50px;
-  margin: 0;
-
-}
-
-.philosophy-sidebar {
-  flex: 1 1 50%;
-  box-sizing: border-box;
-  padding: 20px;
-}
-
 
 /*==========================
 Über Mich
@@ -808,48 +814,48 @@ Adresse
   flex-direction: column;
   align-items: center;
   padding: 40px;
+
+  .adress-wrapper {
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-text {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    padding: 0;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 700px;
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      font: inherit;
+
+      &:focus {
+        outline: none;
+        border: 3px solid;
+        border-color: var(--akzentfarbe02);
+      }
+    }
+  }
 }
 
-.adress-wrapper {
-  margin: 0 auto;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.contact-text {
-  display: flex;
-  justify-content: space-between;
-  max-width: 700px;
-  padding: 0;
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 700px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input,
-textarea {
-  padding: 10px;
-  margin-bottom: 2rem;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  font: inherit;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border: 3px solid;
-  border-color: var(--akzentfarbe02);
-}
 
 /*==========================
 Media Queries
@@ -952,24 +958,22 @@ Desktop Fixes
     flex-direction: row;
     gap: 40px;
     align-items: stretch;
-  }
 
-  .philosophy-content,
-  .philosophy-sidebar {
-    flex: 1 1 50%;
-    box-sizing: border-box;
-  }
+    .philosophy-content,
+    .philosophy-sidebar {
+      flex: 1 1 50%;
+      box-sizing: border-box;
+    }
 
-  /* Sidebar links vom Content */
-  .philosophy-sidebar {
-    order: -1;
-    padding: 100px 0;
-  }
+    .philosophy-sidebar {
+      order: -1;
+      padding: 100px 0;
+    }
 
-  /* Content Hintergrundfarbe */
-  .philosophy-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    .philosophy-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
