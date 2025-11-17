@@ -781,6 +781,16 @@ h2 {
   transition: transform 0.3s ease;
 }
 
+.gallery-item .hover-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item.hovered .hover-text {
+  opacity: 1;
+}
+
+
 .gallery-item:hover img {
   transform: scale(1.05);
 }
