@@ -125,14 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Galerie / Click Funktion für mobile Geräte
 document.querySelectorAll('.gallery-item').forEach(item => {
-  item.addEventListener('touchend',  e => {
+  item.addEventListener('touchend', e => {
     e.stopPropagation(); 
-    document.querySelectorAll('.gallery-item').forEach(i => {
-      if (i !== item) i.classList.remove('hovered');
-    });
-    item.classList.toggle('hovered');
+    
+    if (item.classList.contains('hovered')) {
+      item.classList.remove('hovered');
+    } else {
+
+      document.querySelectorAll('.gallery-item').forEach(i => i.classList.remove('hovered'));
+      item.classList.add('hovered');
+    }
   });
 });
+
 
 
 
