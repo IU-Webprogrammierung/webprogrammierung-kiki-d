@@ -811,17 +811,6 @@ h2 {
   opacity: 1;
 }
 
-@media (hover: hover) {
-  .gallery-item:hover .hover-text {
-    opacity: 1;
-  }
-}
-
-/* Mobile / Touch Klick */
-.gallery-item.hovered .hover-text {
-  opacity: 1;
-}
-
 /* Tablet: 2 Spalten */
 @media (min-width: 760px) {
   .gallery-grid {
