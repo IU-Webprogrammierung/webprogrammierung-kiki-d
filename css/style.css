@@ -512,27 +512,27 @@ body {
   color: var(--textfarbe);
 }
 
-@media (min-width: 760px ){
-   .design-wrapper {
-      flex-direction: row;
-      align-items: center;
+@media (min-width: 760px) {
+  .design-wrapper {
+    flex-direction: row;
+    align-items: center;
 
-      .text-container {
+    .text-container {
+      flex: 1;
+      gap: 0;
+
+      p {
         flex: 1;
-        gap: 0;
-
-        p {
-          flex: 1;
-          width: 100%;
-          margin: 0;
-        }
-      }
-
-      .design {
-        flex: 1;
-        display: flex;
+        width: 100%;
+        margin: 0;
       }
     }
+
+    .design {
+      flex: 1;
+      display: flex;
+    }
+  }
 }
 
 /*==========================
@@ -651,17 +651,17 @@ body {
   padding-top: 0;
 }
 
-.sticky-wrapper {
-  position: relative;
-  height: auto;
-}
-
-.projects h2 {
+h2 {
   padding: 4rem 20px;
   height: auto;
   color: #fff;
 }
 
+
+.sticky-wrapper {
+  position: relative;
+  height: auto;
+}
 
 
 /* Projekte-Liste Mobile */
@@ -683,15 +683,71 @@ body {
   padding: 1rem;
   border-radius: 50%;
   box-sizing: border-box;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+  }
 }
 
-.project-item img {
-  width: 100%;
-  /* passt sich der Containerbreite an */
-  height: auto;
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 2;
+@media (min-width: 760px) {
+
+  /* Projekte: horizontales Scrollen */
+  #projects {
+    h2 {
+      padding: 5% 0 0 10%;
+    }
+
+    .sticky-wrapper {
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .scroll-bar-wrapper {
+      position: absolute;
+      top: 0;
+      height: 15px;
+      width: 100%;
+      background: transparent;
+    }
+
+    .scroll-progress-bar {
+      width: 0%;
+      height: 100%;
+      background-color: var(--akzentfarbe02);
+      transition: width 0.1s linear;
+    }
+
+    .projects-list {
+      display: flex;
+      flex-direction: row;
+      width: max-content;
+      scroll-behavior: smooth;
+      overflow-x: auto;
+
+      .project-item {
+        flex: 0 0 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 50%;
+          margin-right: 2rem;
+        }
+
+        .project-content {
+          width: 50%;
+        }
+      }
+    }
+  }
+
 }
 
 /*==========================
@@ -705,7 +761,7 @@ body {
 
   h2 {
     padding: 0 20px;
-    }
+  }
 
 }
 
@@ -905,118 +961,61 @@ body {
   gap: 1rem;
   font-size: var(--schriftgröße-klein);
   width: 100%;
+  overflow-x: hidden;
+  /* Verhindert unerwünschtes Body-Scrollen */
+}
 
-  /* Tablet / Desktop (760px - 1279px) */
-  @media (min-width: 760px) {
+/* ==========================
+   Tablet / Desktop ab 760px
+========================== */
+@media (min-width: 760px) {
 
-    /* Body / Text */
-    body {
-      font-size: var(--schriftgröße-mittel);
-      width: 100%;
-      color: var(--textfarbe);
-    }
-
-    /* Hamburger & Navigation */
-    .hamburger {
-      display: none;
-    }
-
-    .navigation-list-header {
-      display: flex !important;
-      position: static;
-      right: 0;
-      flex-direction: row;
-      gap: 20px;
-      background: none;
-      height: auto;
-
-      li {
-        a {
-          color: var(--textfarbe);
-          font-family: var(--schriftart-körper);
-          font-size: var(--schriftgröße-mittel);
-          padding: 5px 10px;
-
-          &:hover {
-            color: var(--textfarbe);
-            font-weight: bold;
-          }
-        }
-      }
-    }
-
-    /* Projekte */
-
-
-    #projects {
-      .sticky-wrapper {
-        height: 100vh;
-        width: 100%;
-        overflow: hidden;
-      }
-
-      .scroll-bar-wrapper {
-        position: absolute;
-        top: 0;
-        height: 15px;
-        width: 100%;
-        background: transparent;
-      }
-
-      .scroll-progress-bar {
-        width: 0%;
-        height: 100%;
-        background-color: var(--akzentfarbe02);
-        transition: width 0.1s linear;
-      }
-
-      h2 {
-        padding: 5% 0 0 10%;
-      }
-
-      .projects-list {
-        flex-direction: row;
-        width: max-content;
-        scroll-behavior: smooth;
-
-        .project-item {
-          flex: 0 0 100vw;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            width: 50%;
-            margin-right: 2rem;
-          }
-
-          .project-content {
-            width: 50%;
-          }
-        }
-      }
-    }
+  body {
+    font-size: var(--schriftgröße-mittel);
+    width: 100%;
+    color: var(--textfarbe);
   }
 
-
-
-
-  /*==========================
-   16 Desktop Fixes
-==========================*/
-  @media (min-width: 1280px) {
-    body {
-      gap: 2rem;
-      font-size: var(--schriftgröße-groß);
-      width: 100%;
-      color: var(--textfarbe);
-    }
-
-    .project-item {
-      flex: 0 0 1200px;
-      gap: 3rem;
-      margin-right: 15%;
-    }
-
+  /* Hamburger & Navigation */
+  .hamburger {
+    display: none;
   }
+
+  .navigation-list-header {
+    display: flex !important;
+    position: static;
+    right: 0;
+    flex-direction: row;
+    gap: 20px;
+    background: none;
+    height: auto;
+  }
+
+  .navigation-list-header li a {
+    color: var(--textfarbe);
+    font-family: var(--schriftart-körper);
+    font-size: var(--schriftgröße-mittel);
+    padding: 5px 10px;
+  }
+
+  .navigation-list-header li a:hover {
+    color: var(--textfarbe);
+    font-weight: bold;
+  }
+
+}
+
+
+/* ==========================
+   Desktop Fixes ab 1280px
+========================== */
+@media (min-width: 1280px) {
+
+  body {
+    gap: 2rem;
+    font-size: var(--schriftgröße-groß);
+    width: 100%;
+    color: var(--textfarbe);
+  }
+
 }
