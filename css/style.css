@@ -773,6 +773,12 @@ h2 {
 }
 
 /* Quadrat-Container */
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  overflow: hidden;
+}
+
 .gallery-item img {
   width: 100%;
   height: 100%;
@@ -781,24 +787,8 @@ h2 {
   transition: transform 0.3s ease;
 }
 
-.gallery-item .hover-text {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.gallery-item.hovered .hover-text {
-  opacity: 1;
-}
-
-
 .gallery-item:hover img {
   transform: scale(1.05);
-}
-
-.gallery-item {
-  aspect-ratio: 1 / 1;
-  position: relative;
-  overflow: hidden;
 }
 
 .hover-text {
@@ -817,6 +807,17 @@ h2 {
 
 .gallery-item:hover figcaption,
 .gallery-item:focus-within figcaption {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  .gallery-item:hover .hover-text {
+    opacity: 1;
+  }
+}
+
+/* Mobile / Touch Klick */
+.gallery-item.hovered .hover-text {
   opacity: 1;
 }
 
