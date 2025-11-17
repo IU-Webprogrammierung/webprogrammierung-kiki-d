@@ -189,7 +189,7 @@ a {
 
   li {
     a {
-      color: white;
+      color: black;
       font-size: 2rem;
       text-decoration: none;
       padding: 1rem 2rem;
@@ -197,7 +197,7 @@ a {
       transition: color 0.3s;
 
       &:hover {
-        color: var(--textfarbe);
+        color: white;
       }
     }
   }
@@ -787,19 +787,18 @@ body {
 }
 
 .footer-button {
-  background: white;
-  color: black;
+  background: transparent;
+  color: white;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
-  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
   width: 150px;
   text-align: center;
 
   &:hover {
-    background-color: var(--hauptfarbe03);
-    color: white;
+    background-color: white;
+    color: var(--akzentfarbe03);
     text-decoration: none;
   }
 }
