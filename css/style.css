@@ -897,18 +897,48 @@ body {
 }
 
 .about-text {
-   background: linear-gradient(to bottom, #6FA9BB, #AFB6E4, #D4F6A5);
-  background-size: 100% 800%; 
-  
+  background: linear-gradient(to bottom, #6FA9BB, #AFB6E4, #D4F6A5);
+  background-size: 100% 800%;
+
   animation: gradientShift 15s ease infinite;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
-  100% { background-position: 50% 0%; }
+  0% {
+    background-position: 50% 0%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 50% 0%;
+  }
 }
 
+/* Skills */
+.skills h3 {
+  padding: 20px 0;
+  color: var(--textfarbe);
+}
+
+.skills-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.skill-btn {
+  background-color: var(--hintergrundfarbe);
+  color: var(--textfarbe);
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
 
 .about-text {
   display: flex;
@@ -916,6 +946,7 @@ body {
   gap: 20px;
 }
 
+/* Flip Cards */
 .about ul {
   list-style: none;
   margin: 0;
@@ -1019,7 +1050,6 @@ body {
       width: 50%;
       padding: 40px 30px 0 10px;
     }
-
   }
 
   .flip-card {
@@ -1038,7 +1068,7 @@ body {
     align-items: stretch;
     gap: 40px;
     font-size: medium;
-    height: 780px;
+    height: 850px;
   }
 
   .about-text img {
