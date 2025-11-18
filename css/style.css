@@ -894,63 +894,110 @@ h2 {
 
 .about ul {
   list-style: none;
-  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   text-align: center;
+  align-items: center;
   padding: 2rem 0;
 
   li {
-    background-color: var(--akzentfarbe03);
-    padding: 30px 40px;
+    background-color: transparent;
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
   }
 
-  p {
-    color: #fff;
-    padding: 0 20px;
-  }
-}
-
-.about ul li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .li-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  top: 0;
-  width: 50px;
-  height: 50px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  border: none;
-  font-size: x-large;
-  background-color: var(--hintergrundfarbe);
-  color: var(--akzentfarbe03);
+  font-size: xx-large;
 }
 
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  height: 200px;
+  width: 200px;
+  perspective: 1000px;
+}
 
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: var(--hauptfarbe03);
+  color: #fff;
+}
+
+/* Style the back side */
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  background-color: var(--hintergrundfarbe);
+  color: var(--akzentfarbe03);
+  font-size: large;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+}
 
 
 /* Ab Desktop: nebeneinander */
 @media (min-width: 760px) {
   .about ul {
+    display: flex;
     flex-direction: row;
-    /* horizontal */
-    justify-content: space-between;
-    /* Abstand zwischen den Items */
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .about ul li {
+  .flip-card {
     flex: 1;
-    /* gleichmäßige Breite */
+    width: 200px;
+    height: 200px;
   }
 }
+
 
 /*==========================
    13 Inhalt: Kontakt
