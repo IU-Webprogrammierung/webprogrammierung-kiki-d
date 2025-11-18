@@ -906,6 +906,7 @@ h2 {
     padding: 20px;
     box-sizing: border-box;
     position: relative;
+    background-color: white;
   }
 
 }
@@ -961,7 +962,7 @@ h2 {
   width: 100%;
   height: 100%;
   background-color: var(--hintergrundfarbe);
-  color: var(--akzentfarbe03);
+  color: var(--hauptfarbe03);
   font-size: large;
   transform: rotateY(180deg);
   display: flex;
@@ -979,6 +980,7 @@ h2 {
     display: flex;
     flex-direction: row;
     margin: 0;
+    padding: 200px 0;
     list-style: none;
     width: 100%;
     box-sizing: border-box;
@@ -989,8 +991,10 @@ h2 {
     width: 200px;
     height: 200px;
   }
-  .flip-card-back{
-font-size: x-large;
+
+  .flip-card-back {
+    font-size: x-large;
+    color: var(--hauptfarbe03);
   }
 }
 

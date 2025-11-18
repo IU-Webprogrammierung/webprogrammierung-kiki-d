@@ -122,8 +122,13 @@ document.addEventListener("DOMContentLoaded", () => {
     animate();
 });
 
+// Sanftes scrollen nach unten
+document.querySelector('.scroll-to-contact').addEventListener('click', function(e) {
+  e.preventDefault();
+  document.querySelector('#adress').scrollIntoView({ behavior: 'smooth' });
+});
 
-//Sanftes scrollen
+// Sanftes scrollen nach oben 
 const scrollButton = document.querySelector('.scroll-button');
 
 scrollButton.addEventListener('click', function(e) {
@@ -132,7 +137,7 @@ scrollButton.addEventListener('click', function(e) {
   const scrollDuration = 800; // Dauer in Millisekunden
   const scrollStep = -window.scrollY / (scrollDuration / 15);
 
-  const scrollInterval = setInterval(function(){
+  const scrollInterval = setInterval(function() {
     if (window.scrollY !== 0) {
       window.scrollBy(0, scrollStep);
     } else {
@@ -140,6 +145,8 @@ scrollButton.addEventListener('click', function(e) {
     }
   }, 15);
 });
+
+
 
 
 
