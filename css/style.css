@@ -879,10 +879,26 @@ h2 {
 ========================== */
 
 .about {
+  padding: 0;
 
   h2 {
-    color: var(--textfarbe)
+    color: var(--textfarbe);
+    padding: 0;
   }
+
+  .about-text {
+    background-color: var(--hauptfarbe03);
+  }
+
+  article{
+    padding: 40px 50px 40px 10px;
+  }
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .about ul {
@@ -976,14 +992,19 @@ h2 {
 
 /* Ab Desktop: nebeneinander */
 @media (min-width: 760px) {
-  .about ul {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 200px 0;
-    list-style: none;
-    width: 100%;
-    box-sizing: border-box;
+  .about {
+    justify-content: center;
+    padding: 200px 0 100px 0;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      padding: 100px 0;
+      list-style: none;
+      max-width: 1200px;
+      box-sizing: border-box;
+    }
   }
 
   .flip-card {
@@ -995,6 +1016,31 @@ h2 {
   .flip-card-back {
     font-size: x-large;
     color: var(--hauptfarbe03);
+  }
+
+  .about-text {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 40px;
+    font-size: medium;
+    height: 780px;
+  }
+
+  .about-text img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .about-content {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .about-text {
+    height: 680px;
   }
 }
 
@@ -1099,6 +1145,14 @@ h2 {
   }
 }
 
+.streifen {
+  background-color: #D4F6A5;
+  height: 25px;
+  gap: 0;
+  padding-top: 0;
+  margin: 0;
+}
+
 @media (min-width: 760px) {
   #footer {
     padding: 1.5rem 3rem;
@@ -1127,7 +1181,6 @@ h2 {
 body {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   font-size: var(--schriftgröße-klein);
   width: 100%;
   overflow-x: hidden;
