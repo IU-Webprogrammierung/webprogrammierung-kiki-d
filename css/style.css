@@ -815,7 +815,7 @@ h2 {
     text-decoration: underline;
 
     &:hover{
-      color: var(--akzentfarbe02) ;
+      color: var(--hauptfarbe04) ;
     }
   }
 
