@@ -777,15 +777,16 @@ h2 {
   aspect-ratio: 1 / 1;
   position: relative;
   overflow: hidden;
-}
 
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-  pointer-events: none;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+  }
+
 }
 
 .gallery-item:hover img {
@@ -796,25 +797,48 @@ h2 {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   justify-content: center;
   background: var(--textfarbe);
   color: #fff;
-  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  font-size: clamp(1.0rem, 2.0vw, 1.3rem);
   opacity: 0;
   transition: opacity 0.3s ease;
   padding: 40px;
+  pointer-events: auto;
 }
+
+.hover-text a {
+  margin-top: 1rem;
+    color: #fff;
+    text-decoration: underline;
+
+    &:hover{
+      color: var(--akzentfarbe02) ;
+    }
+  }
 
 .gallery-item:hover figcaption,
 .gallery-item:focus-within figcaption {
   opacity: 1;
 }
 
+.desktop-link {
+  display: none;
+}
+
 /* Tablet: 2 Spalten */
 @media (min-width: 760px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+   .mobile-link {
+    display: none;
+  }
+  .desktop-link {
+    display: inline;
   }
 }
 
