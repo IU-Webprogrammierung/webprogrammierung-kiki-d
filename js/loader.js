@@ -123,6 +123,24 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+//Sanftes scrollen
+const scrollButton = document.querySelector('.scroll-button');
+
+scrollButton.addEventListener('click', function(e) {
+  e.preventDefault(); // verhindert das direkte Springen
+
+  const scrollDuration = 800; // Dauer in Millisekunden
+  const scrollStep = -window.scrollY / (scrollDuration / 15);
+
+  const scrollInterval = setInterval(function(){
+    if (window.scrollY !== 0) {
+      window.scrollBy(0, scrollStep);
+    } else {
+      clearInterval(scrollInterval);
+    }
+  }, 15);
+});
+
 
 
 
