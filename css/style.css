@@ -887,11 +887,11 @@ h2 {
   }
 
   .about-text {
-    background-color: var(--hauptfarbe03);
+    background: linear-gradient(to top, #6FA9BB, #D4F6A5);
   }
 
-  article{
-    padding: 40px 50px 40px 10px;
+  article {
+    padding: 0 40px 30px 40px;
   }
 }
 
@@ -1005,6 +1005,12 @@ h2 {
       max-width: 1200px;
       box-sizing: border-box;
     }
+
+    .about-content {
+      width: 50%;
+      padding: 40px 30px 0 10px;
+    }
+
   }
 
   .flip-card {
@@ -1033,9 +1039,6 @@ h2 {
     object-position: right center;
   }
 
-  .about-content {
-    width: 50%;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -1146,7 +1149,7 @@ h2 {
 }
 
 .streifen {
-  background-color: #D4F6A5;
+  background-color: var(--akzentfarbe02);
   height: 25px;
   gap: 0;
   padding-top: 0;
