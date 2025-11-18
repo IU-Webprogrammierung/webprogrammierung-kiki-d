@@ -921,8 +921,8 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   font-size: xx-large;
 }
