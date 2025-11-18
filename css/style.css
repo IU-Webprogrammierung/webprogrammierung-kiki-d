@@ -996,6 +996,9 @@ h2 {
     width: 200px;
     height: 200px;
   }
+  .flip-card-back{
+font-size: x-large;
+  }
 }
 
 
