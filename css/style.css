@@ -253,31 +253,24 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--akzentfarbe02);
-  color: var(--akzentfarbe01);
+  width: 70px;
+  height: 70px;
+  background-color: var(--textfarbe);
+  color: var(--hintergrundfarbe);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   z-index: 1000;
 }
 
 .scroll-button:hover {
-  background-color: var(--akzentfarbe01);
-  color: var(--akzentfarbe02);
+  background-color: var(--hintergrundfarbe);
+  color: var(--textfarbe);
   text-decoration: none;
 }
-
-@media (min-width: 760px) {
-  .scroll-button {
-    display: none;
-  }
-}
-
 
 /* =========================
    06 Komponenten
