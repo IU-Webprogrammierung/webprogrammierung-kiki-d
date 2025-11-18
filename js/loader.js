@@ -15,67 +15,66 @@ $("header").load("components/header.html", function () {
 
     // --- Horizontal Fullscreen Slider ---
     const section = document.querySelector('#projects');
-    if (!section) return;
+if (!section) return;
 
-    const wrapper = section.querySelector('.sticky-wrapper');
-    const list = section.querySelector('.projects-list');
-    const progress = section.querySelector('.scroll-progress-bar');
+const wrapper = section.querySelector('.sticky-wrapper');
+const list = section.querySelector('.projects-list');
+const progress = section.querySelector('.scroll-progress-bar');
 
-    function horizontalScroll() {
-        const isHorizontal = window.innerWidth >= 761; // Tablet & Desktop
-        const scrollWidth = list.scrollWidth - window.innerWidth;
-        const lastSlide = list.lastElementChild;
-        const lastSlideWidth = lastSlide ? lastSlide.offsetWidth : 0;
+function updateProgress() {
+  const isHorizontal = window.innerWidth >= 761;
+  const rect = section.getBoundingClientRect();
 
-        if (!isHorizontal) {
-            // Mobile Reset
-            section.style.height = 'auto';
-            wrapper.style.position = 'relative';
-            wrapper.style.top = 'auto';
-            wrapper.style.left = 'auto';
-            wrapper.style.width = 'auto';
-            wrapper.style.height = 'auto';
-            list.style.transform = 'none';
-            if (progress) progress.style.width = '0%';
-            return;
-        }
+  if (isHorizontal) {
+    // Desktop: horizontal scroll
+    const scrollWidth = list.scrollWidth - window.innerWidth;
+    const lastSlide = list.lastElementChild;
+    const lastSlideWidth = lastSlide ? lastSlide.offsetWidth : 0;
 
-        // Section-Höhe = Viewport + gesamte horizontale Strecke
-        section.style.height = `${window.innerHeight + scrollWidth + lastSlideWidth}px`;
+    section.style.height = `${window.innerHeight + scrollWidth + lastSlideWidth}px`;
 
-        const rect = section.getBoundingClientRect();
+    if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+      wrapper.style.position = 'fixed';
+      wrapper.style.top = '0';
+      wrapper.style.left = '0';
+      wrapper.style.width = '100%';
+      wrapper.style.height = '100vh';
 
-        if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-            // Sticky & horizontal scroll
-            wrapper.style.position = 'fixed';
-            wrapper.style.top = '0';
-            wrapper.style.left = '0';
-            wrapper.style.width = '100%';
-            wrapper.style.height = '100vh';
-
-            const scrollProgress = Math.min(Math.max(-rect.top / (scrollWidth), 0), 1);
-            list.style.transform = `translateX(-${scrollProgress * scrollWidth}px)`;
-
-            if (progress) progress.style.width = `${scrollProgress * 100}%`;
-
-        } else if (rect.bottom < window.innerHeight) {
-            // Endzustand: letzte Slide fixieren
-            wrapper.style.position = 'relative';
-            wrapper.style.height = 'auto';
-            list.style.transform = `translateX(-${scrollWidth}px)`;
-            if (progress) progress.style.width = '100%';
-        } else {
-            // Startzustand
-            wrapper.style.position = 'relative';
-            list.style.transform = 'translateX(0)';
-            if (progress) progress.style.width = '0%';
-        }
+      const scrollProgress = Math.min(Math.max(-rect.top / scrollWidth, 0), 1);
+      list.style.transform = `translateX(-${scrollProgress * scrollWidth}px)`;
+      progress.style.width = `${scrollProgress * 100}%`;
+    } else if (rect.bottom < window.innerHeight) {
+      wrapper.style.position = 'relative';
+      wrapper.style.height = 'auto';
+      list.style.transform = `translateX(-${scrollWidth}px)`;
+      progress.style.width = `100%`;
+    } else {
+      wrapper.style.position = 'relative';
+      list.style.transform = `translateX(0)`;
+      progress.style.width = `0%`;
     }
+  } else {
+    // Mobile: vertikal scroll, nur Fortschrittsleiste
+    section.style.height = 'auto';
+    wrapper.style.position = 'relative';
+    wrapper.style.top = 'auto';
+    wrapper.style.left = 'auto';
+    wrapper.style.width = '100%';
+    wrapper.style.height = 'auto';
+    list.style.transform = 'none';
 
-    // Init + Events
-    horizontalScroll();
-    window.addEventListener('scroll', horizontalScroll);
-    window.addEventListener('resize', horizontalScroll);
+    const scrollTop = window.scrollY;
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    const scrollProgress = Math.min(Math.max((scrollTop - sectionTop) / sectionHeight, 0), 1);
+    progress.style.width = `${scrollProgress * 100}%`;
+  }
+}
+
+// Init + Events
+updateProgress();
+window.addEventListener('scroll', updateProgress);
+window.addEventListener('resize', updateProgress);
 
 
 });
