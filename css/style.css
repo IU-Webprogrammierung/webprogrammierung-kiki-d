@@ -1188,9 +1188,10 @@ body {
 }
 
 .streifen {
-  background-color: var(--akzentfarbe02);
+  background: var(--hauptfarbe03);
+  width: 100%;
   height: 25px;
-  gap: 0;
+  width: 100%;
   padding-top: 0;
   margin: 0;
 }
