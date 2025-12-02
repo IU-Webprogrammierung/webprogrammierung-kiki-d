@@ -46,7 +46,7 @@ Die Webseite kombiniert sauberen, SEO-optimierten Code und interaktive Animation
 
 
 
-## Responsive Design Strategie
+## 💻 Responsive Design Strategie
 
 Durch den Einsatz von Media Queries ist die Webseite responsiv für Desktop, Tablet und Mobile optimiert:
 
@@ -77,7 +77,9 @@ window.addEventListener('scroll', updateHorizontalScroll);
 window.addEventListener('resize', updateHorizontalScroll);
 updateHorizontalScroll();
 ```
-Der Code zeigt einer vereinfachte Version des horizontalen Scroll-Effekts. Die vertikale Scrollposition wird dabei in eine horizontale Bewegung umgerechnet. Für den gesamten Code siehe loader.js
+Der Code zeigt einer vereinfachte Version des **horizontalen Scroll-Effekts**. Die vertikale Scrollposition wird dabei in eine horizontale Bewegung umgerechnet. Für den gesamten Code siehe loader.js
+
+
 
 ### "Scroll-to-Top"-Effekt (JS)
 
@@ -99,7 +101,7 @@ scrollButton.addEventListener('click', function(e) {
   }, 15);
 });
 ```
-Der Code sorgt dafür, dass beim Klick auf die .scroll-button-Schaltfläche die Seite sanft nach oben scrollt, anstatt sofort zum Seitenanfange zu springen.
+Der Code sorgt dafür, dass beim Klick auf die .scroll-button-Schaltfläche **die Seite sanft nach oben scrollt**, anstatt sofort zum Seitenanfange zu springen.
 
 
 ## 🗂️ Projektstruktur
@@ -132,6 +134,22 @@ Ansichten des Footers
 - optisches Feintuning
 - Erfolgreiches Senden des Kontaktformulars
 
+
+## Projektrückblick
+
+### was habe ich gelernt?
+
+- **Entwicklungsumgebung**: Visual Studio Code
+- **Struktur**: Klare Sections und Überschriften für komplexe Inhalte
+- **CSS-Techniken**: SCSS, Media Queries und moderne Styles
+- **Interaktivität**: Cursor-, Scroll- und Hover-Animationen
+- **Qualität**: SEO-optimierter und barrierefreundlicher Code
+- **Versionierung**: Git für Versionskontrolle
+
+
+Durch das Projekt habe ich meine Kenntnisse in HTML, CSS/SCSS und JavaScript vertieft, interaktive Elemente wie Maus- und Scroll-Animationen umgesetzt und gelernt, sauberen, wartbaren Code zu schreiben. Dabei wurde mir bewusst, wie wichtig Barrierefreiheit, Performance und klare Strukturen für Webseiten sind.
+
+###
 
 ## 📞 Kontakt
 
