@@ -1,6 +1,6 @@
-# Portfolio Projekt – Web-Programming (DLBUXPWP01)
+# Portfolio Projekt – Web-Programmierung (DLBUXPWP01)
 
-Ein modernes, responsives Web-Portfolio, zur Präsentation von Projekten, technischen Fähigkeiten und Dienstleistungen in einem professionellen, künstlerischen Design.
+Ein modernes, responsives Web-Portfolio, zur Präsentation meiner Projekte, technischen Fähigkeiten und Dienstleistungen in einem professionellen, künstlerischen Design.
 
 
 
@@ -26,7 +26,7 @@ abschließender Satz
 
 ## 🔧 Technologie-Stack
 
-- **Frontend:** HTML 5, CSS3, JavaScript
+- **Frontend:** HTML 5, CSS3, SCSS, JavaScript
 
 - **Design:** Figma, Adobe Photoshop
 
@@ -59,35 +59,29 @@ abschließender Satz
 
 ```plaintext
 WEBPROGRAMMIERUNG-KIKI-D/
-├── index.html               → Landing page
-├── ubermich.html            → persönliche Angaben
-├── projekte.html            → abgeschlossene Projekte
-├── philosophie.html         → Meine Fähigkeiten und Werte
-├── contact.html             → Möglichkeit zur Kontaktaufnahmen
-├── 404.html                 → Custom error page
+├── components/
+│   ├── header.html
 ├── css/
 │   ├── style.css
-│   ├── index.css
-│   ├── ubermich.css
-│   ├── projekte.css
-│   ├── philosophie.css
-│   ├── kontakt.css
-│   ├── 404.css
+├── img/
+│   ├── header.html
 ├── js/
-│   ├── eins.js
-│   ├── zwei.js
-│   ├── drei.js
-│   ├── vier.js
-│   ├── funf.js
-├── assets/
+│   ├── loader.js
+├── 404.html
+├── index.html
 ├── README.md 
 ```     
 
 ## 🔍 Screenshots
 
-- 
-- 
--
+![Startseite Screenshot](img/screenshots/ansicht_1.webp) 
+Ansichten des Startbereichs
+
+![Startseite Screenshot](img/screenshots/ansicht_2.webp) 
+Ansichten der Projektbereiche
+
+![Startseite Screenshot](img/screenshots/ansicht_3.webp) 
+Ansichten des Footers
 
 ## 📈 Geplante Verbesserungen
 
@@ -98,7 +92,7 @@ WEBPROGRAMMIERUNG-KIKI-D/
 
 ## 📞 Kontakt
 
-- E-Mail:
+- E-Mail: chiara.dent@t-online.de
 -
 
 ---
